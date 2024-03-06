@@ -1,5 +1,5 @@
 <html>
-    <body style="background: rgb(0, 50, 50);color: red;">
+    <body style="background: rgb(22, 100, 22);color: red;">
         <?php
         $id = $_GET['id'];
 

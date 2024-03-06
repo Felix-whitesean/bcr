@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN | Details Update</title>
-    <meta name="theme-color" content="rgb(0, 50, 50)">
+    <meta name="theme-color" content="rgb(22, 100, 22)">
     <link rel="icon" href="ff.png">
     <style>
                 :root{
                     --primary-background: rgb(240, 240, 240);
-                    --secondary-background: rgb(20, 117, 20);
-                    --secondary-background-with-opacity: rgb(20, 117, 20, .5);
+                    --secondary-background: rgb(22, 100, 22);
+                    --secondary-background-with-opacity: rgb(20, 100, 22, .5);
                     --title-text: "Jacques Francois Shadow", serif;
                     --medium-text: "Irish Grover", system-ui;
                     --normal-text: "Itim", cursive;
@@ -19,8 +19,8 @@
                     --footer-color: rgb(153, 153, 153);
                 }
                 body{
-                    background: rgb(0, 50, 50);
-                    color: rgb(255, 255, 197);
+                    background: rgb(22, 100, 22);
+                    color: rgb(240, 240, 240);
                 }
                 h3{
                     font-family: var(--title-text);
@@ -31,8 +31,8 @@
                     width: fit-content;
                     padding: 20px 50px;
                     margin: auto;
-                    background: rgb(255, 255, 197, .6);
-                    border: 2px solid rgb(255, 197, 155);
+                    background: rgb(240, 240, 240, .6);
+                    border: 2px solid rgb(240, 240, 240);
                     user-select: none;
                 }
                 form label{
@@ -49,7 +49,7 @@
                     color: rgb(255, 255, 255, .8);
                     background: transparent;
                     border: transparent;
-                    border-bottom: 2px solid rgb(0, 50, 50);
+                    border-bottom: 2px solid rgb(22, 100, 22);
                     font-family: var(--normal-text);
                 }
                 form textarea{
@@ -67,8 +67,8 @@
                     font-family: var(--medium-text);
                 }
                 form  button:hover{
-                    background: rgb(255, 197, 155);
-                    color: rgb(0, 50, 50);
+                    background: rgb(240, 240, 240);
+                    color: rgb(22, 100, 22);
                     cursor: pointer;
                     outline: 2px solid: rgb(0, 0, 0, .8);
                     border: 2px solid: rgb(0, 0, 0, .8);

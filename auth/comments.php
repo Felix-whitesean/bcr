@@ -24,11 +24,11 @@
             --footer-color: rgb(153, 153, 153);
         }
         body{
-            color: rgb(255, 255, 197);
-            background: rgb(0, 50, 50);
+            color: rgb(240, 240, 240);
+            background: rgb(22, 100, 22);
         }
         .header{
-            color: rgb(255, 255, 255);
+            color: rgb(240, 240, 240);
             font-size: 20px;
             font-family: var(--title-text);
             border: 1px solid;
@@ -81,7 +81,7 @@
             display: none;
         }
         .tmd{
-            color: rgb(255, 255, 255);
+            color: var(--primary-background);
             text-decoration: underline dotted;
             text-align: center;
             padding-left: 2%;
@@ -112,8 +112,8 @@
                 <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
                 <style>
                         :root{
-                            --primary-background: rgb(255, 255, 197);
-                            --secondary-background: rgb(0, 50, 50);
+                            --primary-background: rgb(240, 240, 240);
+                            --secondary-background: rgb(22, 100, 22);
                             --secondary-background-with-opacity: rgb(0, 50, 50, .5);
                             --title-text: "Jacques Francois Shadow", serif;
                             --medium-text: "Irish Grover", system-ui;
@@ -122,20 +122,20 @@
                             --footer-color: rgb(153, 153, 153);
                         }
                         body{
-                            background: rgb(0, 50, 50);
-                            color: rgb(0, 50, 50);
+                            background: rgb(22, 100, 22);
+                            color: rgb(22, 100, 22);
                         }
                         h3{
                             font-family: var(--title-text);
-                            color: rgb(0, 50, 50);
+                            color: rgb(22, 100, 22);
                             text-decoration: underline;
                         }
                         form{
                             width: fit-content;
                             padding: 10px;
                             margin: auto;
-                            background: rgb(255, 255, 197, .6);
-                            border: 2px solid rgb(255, 197, 155);
+                            background: rgb(240, 240, 240, .6);
+                            border: 2px solid var(--secondary-background);
                             user-select: none;
                             color: var(--primary-color);
                         }

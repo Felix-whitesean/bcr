@@ -33,8 +33,8 @@
                     width: fit-content;
                     padding: 20px 50px;
                     margin: auto;
-                    background: rgb(255, 255, 197, .6);
-                    border: 2px solid rgb(255, 197, 155);
+                    background: rgb(240, 240, 240, .6);
+                    border: 2px solid var(--secondary-background);
                     user-select: none;
                     color: var(--primary-color);
                 }
@@ -52,7 +52,7 @@
                     color: rgb(0, 155, 155);
                     background: transparent;
                     border: transparent;
-                    border-bottom: 2px solid rgb(0, 50, 50);
+                    border-bottom: 2px solid var(--secondary-background);
                     font-family: var(--normal-text);
                 }
                 form textarea{
@@ -70,7 +70,7 @@
                     font-family: var(--medium-text);
                 }
                 form button:hover{
-                    background: rgb(200, 200, 200);
+                    background: var(--primary-background);
                     cursor: pointer;
                     box-shadow: 1px 1px 4px black;
                     color: rgb(0, 0, 0, .8);
