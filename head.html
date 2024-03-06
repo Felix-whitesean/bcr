@@ -14,7 +14,6 @@
             scroll-behavior: smooth;
             scroll-padding: 10rem;
         }
-        
         .floating{
             background: var(--secondary-background);
             width: 100%;
@@ -86,7 +85,7 @@
         }
         .nav li a:hover{
             transition: 0.5s;
-            color: rgb(255, 255, 197, .9);
+            color: rgb(150, 150, 150);
             cursor: pointer;
             padding-top: 2px;
         }
@@ -148,9 +147,6 @@
             </div>
             <div class="head title" title="Biochar Climate Resolution">
                 BCR
-                <!-- <span>Biochar</span>
-                <span style="margin-left: 20px">Climate</span>
-                <span>Resolution</span> -->
             </div>
         </div>
         <div class="nav">
@@ -175,6 +171,7 @@
             for(i=0; i<navLinks.length; i++){
                 if(cur == navLinks[i].href){
                     navLinks[i].style.borderBottom = "2px solid";
+                    navLinks[i].style.color = "rgb(180, 180, 180)";
                 }
             }
             hambugher = document.querySelector('.bars');
