@@ -16,8 +16,6 @@ body{
     font-family: "Itim", cursive;
     background: var(--primary-background);
     user-select: none;
-    scroll-behavior: smooth;
-    scroll-padding: 50rem;
 }
 .loadingBackground{
     width: 100%;
@@ -80,37 +78,67 @@ body{
     }
 }
 .landing{
-    background: url('FB_IMG_1674349258701.jpg');
+    background: rgb(0, 0, 0, .6);
     min-height: 250px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin: 45px;
+    margin: 15px;
     margin-top: 100px;
     margin-bottom: 20px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
 }
 .landingContent{
-    background: rgb(0, 0, 0, .5);
-    padding: 5px;
+    padding: 10px;
     padding-top: 3%;
+    position: relative;
 }
-.landing h1{
+.landingContent::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    background: rgb(22, 100, 22, .6);
+    background: linear-gradient(90deg,rgb(22, 100, 22) 50%, rgb(0, 0, 0)50%);
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+.landingContent::after{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,rgb(0, 0, 0) 50%, rgb(22, 100, 22)50%);
+}
+.landingContent h1{
     max-width: 700px;
     margin: auto;
     padding: 18px;
     font-family: var(--medium-text);
     color: var(--secondary-background);
     text-decoration: underline;
-    background: rgb(255, 255, 255, .6);
+    background: rgb(240, 240, 240, .8);
     text-align: center;
     border-radius: 50px;
     font-size: 32px;
+    z-index: 11;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    letter-spacing: 2px;
 }
-.landing p{
+.landingContent p{
     padding-top: 40px;
     max-width: 80vw;
     margin: auto;
     color: white;
     font-size: 26px;
+    z-index: 11;
+    text-align: center;
 }
 hr{
     border: 1px solid var(--secondary-background);
@@ -121,7 +149,7 @@ hr{
 .sectionBTitle .title{
     font-family: var(--title-text);
     font-size: 32px;
-    background: var(--secondary-background-with-opacity);
+    background: var(--secondary-background);
     color: var(--primary-background);
     width: fit-content;
     margin: auto;
@@ -143,7 +171,7 @@ hr{
     gap: 40px;
 }
 .excerpts .firstExcerpt .paragraph, .excerpts .secondExcerpt .paragraph{
-    background: rgb(0, 0, 0, .3);
+    background: var(--secondary-background);
     padding: 30px;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
@@ -161,17 +189,17 @@ hr{
     font-family: var(--normal-text);
 }
 .slides1, .slides2{
-    max-width: 300px;
+    max-width: 310px;
     overflow: auto;
-    border: 2px solid;
     margin: auto;
     display: flex;
     gap: 20px;
     color: white;
+    padding: 5px;
 }
 .excerpts .secondExcerpt .paragraph .imageSlidesContainer, .excerpts .firstExcerpt .paragraph .imageSlidesContainer{ 
     display: flex;
-    gap: 40px;
+    gap: 10px;
     padding: 5px;
     padding-left: 15px;
 }
@@ -194,13 +222,16 @@ hr{
     padding: 5px;
     padding-left: 13px;
     padding-right: 13px;
-    background: var(--secondary-background-with-opacity);
-    color: var(--primary-background);
+    background: linear-gradient(90deg, var(--primary-background) 50%, var(--secondary-background) 50%);
+    color: black;
     text-align: center;
     font-size: 28px;
     z-index: 1;
     align-self: flex-start;
     position: absolute;
+    border: 1px solid white;
+    margin-top: 15%;
+    transition: 1s;
 }
 .fnext, .next{
     margin-left: 300px;
@@ -214,8 +245,9 @@ hr{
     margin-left: 0;
 }
 .fnext:hover, .fprevious:hover,.next:hover, .previous:hover{
-    background: rgb(0, 0, 0);
+    background: rgb(240, 240, 240);
     cursor: pointer;
+    transition: 1s;
 }
 .paragraph .text{
     font-family: var(--normal-text);
@@ -227,14 +259,14 @@ hr{
 }
 .vision, .mission{
     margin: auto;
-    background: var(--secondary-background);
-    //background: rgb(121, 134, 149, .3);
     max-width: 40%;
     padding: 23px;
     padding-bottom: 70px;
     border-right: 5px solid rgb(255, 255, 255);
     border-bottom: 5px solid rgb(255, 255, 255);
     box-shadow: 3px 3px 5px rgb(0, 0, 0, .4);
+    color: var(--secondary-background);
+    background: rgb(201, 224, 248, .3);
 }
 .visionTitle, .missionTitle{
     font-family: var(--title-text);
@@ -246,7 +278,7 @@ hr{
 }
 .functionsTitle{
     color: var(--primary-background);
-    background: var(--secondary-background-with-opacity);
+    background: var(--secondary-background);
     width: fit-content;
     margin: auto;
     padding: 5px;
@@ -263,6 +295,7 @@ hr{
     padding: 40px;
     padding-left: 9%;
     justify-content: space-around;
+    color: var(--secondary-background);
 }
 .function3, .function2, .function1{
     max-width: 300px;
@@ -282,7 +315,7 @@ hr{
     margin-top: 10px;
 }
 .function3Image2{
-    background: url(gallery/IMG_20231215_085736_047.jpg);
+    background: url(gallery/IMG_20230331_141338_905.jpg);
     margin-top: 10px;
 }
 .function3Image2, .function1Image2, .function3Image, .function2Image, .function1Image{
@@ -291,14 +324,14 @@ hr{
     background-size: 100% 100%;
 }
 .function2Image{
-    background: url(gallery/FB_IMG_1674349245094.jpg);
+    background: url(gallery/IMG_20231215_085736_047.jpg);
     height: 210px;
     background-size: 80% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 .function3Image{
-    background: url(gallery/FB_IMG_1672895312611.jpg);
+    background: url(gallery/FB_IMG_16728953242351.jpg);
     height: 210px;
     background-size: 80% 100%;
     background-repeat: no-repeat;
@@ -313,18 +346,25 @@ hr{
         margin-left: -20px;
     }
     .firstExcerpt, .secondExcerpt{
-        margin: auto;
+        margin: 0 auto;
         max-width: 75vw;
     }
     .secondExcerpt{
-        margin-left: -40px;
+        margin-left: -50px;
     }
     .functionsContent{
         flex-wrap: wrap;
     }
+    .firstExcerpt{
+        margin-left: -20px;
+    }
     .landing{
         margin: 10px;
         margin-top: 80px;
+        border-radius: 0;
+    }
+    .landingContent::before{
+        border-radius: 0;
     }
     .landingContent{
         text-align: center;
@@ -341,6 +381,6 @@ hr{
         min-width: 80vw;
     }
     .fnext, .next{
-        margin-left: 280px;
+        margin-left: 300px;
     }
 }

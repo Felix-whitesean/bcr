@@ -9,9 +9,9 @@
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
     <style>
                 :root{
-                    --primary-background: rgb(255, 255, 197);
-                    --secondary-background: rgb(0, 50, 50);
-                    --secondary-background-with-opacity: rgb(0, 50, 50, .5);
+                    --primary-background: rgb(240, 240, 240);
+                    --secondary-background: rgb(20, 117, 20);
+                    --secondary-background-with-opacity: rgb(20, 117, 20, .5);
                     --title-text: "Jacques Francois Shadow", serif;
                     --medium-text: "Irish Grover", system-ui;
                     --normal-text: "Itim", cursive;

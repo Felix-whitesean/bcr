@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
     <link rel="icon" href="logo5.jpg">
-    <<meta name="theme-color" content="rgb(0, 128, 0);">
+    <<meta name="theme-color" content="rgb(22, 110, 22)">
 </head>
 <body>
     <div class="loadingBackground">

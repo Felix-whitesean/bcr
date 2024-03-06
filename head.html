@@ -8,22 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <meta name="theme-color" content="rgb(0, 50, 50)">
+    <meta name="theme-color" content="rgb(22, 110, 22)">
     <style>
         html{
             scroll-behavior: smooth;
             scroll-padding: 10rem;
         }
-        :root{
-            --primary-background: rgb(255, 255, 197);
-            --secondary-background: rgb(20, 117, 20);
-            --secondary-background-with-opacity: rgb(20, 117, 20, .5);
-            --title-text: "Jacques Francois Shadow", serif;
-            --medium-text: "Irish Grover", system-ui;
-            --normal-text: "Itim", cursive;
-            --footer-background: rgb(31, 36, 45, .8);
-            --footer-color: rgb(153, 153, 153);
-        }
+        
         .floating{
             background: var(--secondary-background);
             width: 100%;
@@ -85,6 +76,7 @@
             color: var(--primary-background);
             text-decoration: none;
             display: block;
+            text-shadow: 1px 1px 2px black;
         }
         .nav li a i{
             padding: 5px;
@@ -133,7 +125,7 @@
             }
             .navDisplay{
                 display: flex;
-                background: rgb(0, 50, 50);
+                background: var(--secondary-background);
                 padding: 12px 32px;
             }
             .navDisplay li{
