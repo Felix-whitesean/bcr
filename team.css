@@ -228,6 +228,9 @@ body{
         flex-direction: column;
         flex-wrap: wrap;
     }
+    .aboutPerson{
+        max-width: 70vw;
+    }
     .team .teamNames .teamTitle{
         white-space: wrap;
         background: transparent;
