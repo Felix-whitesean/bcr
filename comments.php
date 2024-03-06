@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="comments.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
-        <link rel="icon" href="logo5.jpg">
+        <link rel="icon" href="ff.png">
     </head>
     <body>
 

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biochar | Admin - Signup</title>
-    <link rel="icon" href="logo5.jpg">
+    <link rel="icon" href="ff.png">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
     <style>
                 :root{

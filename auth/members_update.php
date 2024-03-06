@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMIN | Details Update</title>
     <meta name="theme-color" content="rgb(0, 50, 50)">
-    <link rel="icon" href="logo5.jpg">
+    <link rel="icon" href="ff.png">
     <style>
                 :root{
                     --primary-background: rgb(240, 240, 240);

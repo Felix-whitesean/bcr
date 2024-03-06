@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biochar | Admin - Login</title>
-    <link rel="icon" href="logo5.jpg">
+    <link rel="icon" href="ff.png">
     <meta name="theme-color" content="rgb(0, 50, 50)">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
     <style>
