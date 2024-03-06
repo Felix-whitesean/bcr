@@ -91,7 +91,7 @@ body{
     color: var(--secondary-background);
     font-family: var(--normal-text);
     padding-bottom: 40px;
-    max-width: 50vw;
+    max-width: 80vw;
 }
 .profile .head{
     background: var(--secondary-background);
@@ -136,7 +136,7 @@ body{
     max-height: 280px;
     padding: 20px;
     font-size: 18px;
-    max-width: 50vw;
+    max-width: 80vw;
 }
 .team .teamNames .names::-webkit-scrollbar, .aboutPerson::-webkit-scrollbar{
     background: rgb(0, 0, 0, .8);
@@ -227,9 +227,6 @@ body{
     .personaldetails{
         flex-direction: column;
         flex-wrap: wrap;
-    }
-    .aboutPerson{
-        max-height: 33vh;
     }
     .team .teamNames .teamTitle{
         white-space: wrap;
