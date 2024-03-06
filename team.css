@@ -1,0 +1,236 @@
+:root{
+    --primary-background: rgb(255, 255, 197);
+    --secondary-background: rgb(20, 117, 20);
+    --secondary-background-with-opacity: rgb(20, 117, 20, .5);
+    --title-text: "Jacques Francois Shadow", serif;
+    --medium-text: "Irish Grover", system-ui;
+    --normal-text: "Itim", cursive;
+    --footer-background: rgb(31, 36, 45, .8);
+    --footer-color: rgb(153, 153, 153);
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+}
+body{
+    padding-top: 50px;
+    background: var(--primary-background);
+    user-select: none;
+}
+.about .aboutTitle, .section1Title{
+    color: var(--primary-background);
+    background: var(--secondary-background-with-opacity);
+    padding: 6px;
+    text-decoration: underline;
+    width: fit-content;
+    margin: auto;
+    font-family: var(--title-text);
+    font-size: 28px;
+}
+.team{
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    width: 90%;
+    max-height: 470px;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+.teamNames{
+    flex: 30%;
+    border: 2px solid;
+    background: var(--secondary-background-with-opacity);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    max-width: 5vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mname:hover{
+    color: var(--primary-background);
+    cursor: pointer;
+}
+.mname div:hover{
+    color: rgb(255, 255, 255, .8);
+}
+.team .teamNames .teamTitle{
+    color: var(--primary-background);
+    background: rgb(5, 155, 155);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--medium-text);
+    font-size:  20px;
+}
+.team .teamNames .names{
+    overflow-y: auto;
+    font-family: var(--medium-text);
+    max-width: 8vw;
+}
+.team .teamNames .names p{
+    padding: 3px;
+    font-size: 18px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.team .teamNames .names p::-webkit-scrollbar{
+    display: none;
+}
+.team .teamNames .names p:hover{
+    box-shadow: 2px 0 5px rgb(0, 0, 0);
+    overflow-x: auto;
+    text-overflow: initial;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.profile{
+    flex: 80%;
+    border: 2px solid;
+    border-radius: 30px;
+    background: rgb(0, 0, 0, .3);
+    color: var(--secondary-background);
+    font-family: var(--normal-text);
+    padding-bottom: 40px;
+}
+.profile .head{
+    background: rgb(5, 155, 155);
+    padding: 10px;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    font-family: var(--medium-text);
+    font-size:  20px;
+    width: auto;
+}
+.profile .profileTitle{
+    color: var(--primary-background);
+}
+.profile .personName{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: flex;
+    gap: 6px;
+    width: fit-content;
+    white-space: nowrap;
+}
+.profile .personName p{
+    padding: 0;
+    margin-top: -1px;
+}
+.profile .personaldetails{
+    background: rgb(5, 155, 155, .4);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: var(--medium-text);
+    letter-spacing: 4px;
+    font-weight: 100px;
+}
+.aboutPerson{
+    background: rgb(255, 255, 255);
+    overflow-y: auto;
+    min-height: 240px;
+    max-height: 280px;
+    padding: 20px;
+    font-size: 18px;
+}
+.team .teamNames .names::-webkit-scrollbar, .aboutPerson::-webkit-scrollbar{
+    background: rgb(0, 0, 0, .8);
+    border-radius: 30px;
+    padding: 12px;
+    width: 8px;
+}
+.team .teamNames .names::-webkit-scrollbar-thumb, .aboutPerson::-webkit-scrollbar-thumb{
+    border-radius: 30px;
+    background: rgb(255, 255, 255, .8);
+}
+.personalSocials{
+    background: rgb(0, 0, 0);
+    width: fit-content;
+    border: 2px solid;
+    margin: auto;
+    display: flex;
+    gap: 8px;
+    margin-top: -53px;
+    border-bottom: 0;
+}
+.personalSocials a{
+    list-style: none;
+    padding: 8px 5px;
+    padding-top: 9px;
+    color: rgb(5, 155, 155);
+    font-size: 32px;
+}
+.personalSocials a i{
+    font-size: 32px;
+}
+.about{
+    padding: 9px;
+}
+.about .aboutTitle{
+    padding: 5px;
+}
+.aboutcontent{
+    font-family: var(--normal-text);
+    font-size: 20px;
+    color: var(--secondary-background);
+    padding: 20px;
+    margin: 50px auto;
+    margin-top: 10px;
+}
+.aboutimage{
+    max-width: 80vw;
+    max-height: 400px;
+    background-size: 100% 100%;
+    float: left;
+    margin-right: 20px;
+}
+.aboutText{
+    padding: 7px;
+    padding-left: 12px;
+}
+.aboutText h1{
+    text-transform: uppercase;
+    text-decoration: underline dashed;
+}
+.persontitle, .joined{
+    display: flex;
+    white-space: nowrap;
+    gap: 10px;
+}
+.persontitle p, .joined p{
+    margin-top: -1px;
+    color: var(--primary-background);
+    text-decoration: dashed underline;
+}
+@media only screen and (max-width:878px){
+    .team{
+        max-height: 80vh;
+    }
+    .team .teamNames{
+        max-width: 20vw;
+    }
+    .team .teamNames::-webkit-scrollbar{
+        display: none;
+    }
+    .profileTitle{
+        display:none;
+    }
+    .persontitle, .joined{
+        flex-direction: column;
+    }
+    .personaldetails{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .aboutPerson{
+        max-height: 33vh;
+    }
+    .team .teamNames .teamTitle{
+        white-space: wrap;
+        background: transparent;
+    }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="rgb(0, 50, 50)">
+    <style>
+        html{
+            scroll-behavior: smooth;
+            scroll-padding: 10rem;
+        }
+        :root{
+            --primary-background: rgb(255, 255, 197);
+            --secondary-background: rgb(0, 50, 50);
+            --secondary-background-with-opacity: rgb(0, 50, 50, .5);
+            --title-text: "Jacques Francois Shadow", serif;
+            --medium-text: "Irish Grover", system-ui;
+            --normal-text: "Itim", cursive;
+            --footer-background: rgb(31, 36, 45, .8);
+            --footer-color: rgb(153, 153, 153);
+        }
+        .floating{
+            background: var(--secondary-background);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 11111;
+        }
+        .floating .head{
+            display: flex;
+            gap:7px;
+            left: 0;
+            z-index: 111;
+            padding: 10px;
+            padding-top: 0;
+            top: 0;
+        }
+        .floating .head .logo{
+            width: 40px;
+            height: 40px;
+            border-radius: 5%;
+            padding-top: 0;
+            padding: 6px;
+            background: rgb(255, 255, 255);
+            background-size: 100% 100%;
+            border-radius: 50%;
+            border: 2px solid var(--secondary-background);
+            z-index: 111;
+
+        }
+        .head .title{
+            font-family: var(--title-text);
+            font-size: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 6px;
+            padding-top: 0;
+            padding-right: 28px;
+            padding-left: 28px;
+            color: var(--primary-background);
+        }
+        .nav{
+            display: flex;
+            top: 0;
+            position: fixed;
+            right: 30px;
+            gap: 28px;
+            font-family: var(--medium-text);
+            padding: 10px;
+            padding-left: 18px;
+            padding-bottom: 1px;
+        }
+        .nav li{
+            list-style: none;
+            padding-bottom: 5px;
+        }
+        .nav li a{
+            transition: 0.5s;
+            color: var(--primary-background);
+            text-decoration: none;
+            display: block;
+        }
+        .nav li a i{
+            padding: 5px;
+            border-radius: 50%;
+            border: 1px solid;
+            margin-left: 5px;
+        }
+        .nav li a:hover{
+            transition: 0.5s;
+            color: rgb(255, 255, 197, .9);
+            cursor: pointer;
+            padding-top: 2px;
+        }
+        .bars{
+            display: none;
+        }
+        @media only screen and (max-width:778px){
+            .head{
+                width: fit-content;
+                gap: 5px;
+            }
+            .nav{
+                background: var(--secondary-background-with-opacity);;
+                flex-direction: column;
+                display: none;
+            }
+            .bars{
+                padding: 13px;
+                padding-bottom: 10px;
+                display: flex;
+                background: var(--secondary-background);
+                float: right;
+                right: 30px;
+                top: 0;
+                width: fit-content;
+                position: fixed;
+                z-index: 1111;
+            }
+            .bars i{
+                color: var(--primary-background);
+                font-size: 23px;
+            }
+            .bars:hover{
+                cursor: pointer;
+                background: var(--secondary-background-with-opacity);
+            }
+            .navDisplay{
+                display: flex;
+                background: rgb(0, 50, 50);
+                padding: 12px 32px;
+            }
+            .navDisplay li{
+                padding: 0 15px;
+            }
+            .navDisplay li a:hover{
+                transition: 0.5s;
+                padding-top: 0;
+                padding-left: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="floating">
+        <div class="head">
+            <div class="head logo" title="Biochar Climate Resolution">
+                <img src="logo6.jpg" alt="">
+            </div>
+            <div class="head title" title="Biochar Climate Resolution">
+                BCR
+                <!-- <span>Biochar</span>
+                <span style="margin-left: 20px">Climate</span>
+                <span>Resolution</span> -->
+            </div>
+        </div>
+        <div class="nav">
+            <li class="first"><a href="index.php"><i class="fa-solid fa-house"></i><div>Home</div></a></li>
+            <li><a href="team.php"><i class="fa-solid fa-users"></i><div>Team</div></a></li>
+            <li><a href="team.php#about"><i class="fa-solid fa-circle-info"></i><div>About Us</div></a></li>
+            <li><a href="index.php#mission"><i class="fa-solid fa-note-sticky"></i><div>Mission</div></a></li>
+        </div>
+        <div class="bars">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function(){
+            head = document.querySelector('.head');
+            head.addEventListener('click', function(){
+                window.location = "index.php"
+            })
+            navLinks = document.querySelectorAll('a');
+            var cur = window.location.href;
+            first = document.querySelector('.first');
+            for(i=0; i<navLinks.length; i++){
+                if(cur == navLinks[i].href){
+                    navLinks[i].style.borderBottom = "2px solid";
+                }
+            }
+            hambugher = document.querySelector('.bars');
+            nav = document.querySelector('.nav');
+            hambugher.addEventListener("click", toggle);
+            function toggle(){
+                hambugher.querySelector('i').classList.toggle('fa-circle-xmark');
+                nav.classList.toggle('navDisplay');
+            }
+        })
+    </script>
+</body>
+</html>

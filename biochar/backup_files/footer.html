@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --primary-background: rgb(255, 255, 197);
+            --secondary-background: rgb(0, 55, 55);
+            --secondary-background-with-opacity: rgb(50, 50, 50, .5);
+            --title-text: "Jacques Francois Shadow", serif;
+            --medium-text: "Irish Grover", system-ui;
+            --normal-text: "Itim", cursive;
+            --footer-background: rgb(31, 36, 45, .8);
+            --footer-color: rgb(153, 153, 153);
+            --tertiary: rgb(250, 50, 50, .5);
+        }
+        .footer{
+            font-family: var(--normal-text);
+            display: flex;
+            background: rgb(42,54,63);
+            color: rgb(255, 255, 255, .8);
+            padding: 45px;
+            justify-content: space-between;
+            bottom: -90px;
+            padding-bottom: 0;
+        }
+        .qlinks, .form, .connect{
+            padding: 10px;
+        }
+        .contact{
+            padding: 10px;
+        }
+
+        .socialmedia{
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .socialmedia .logo{
+            border-radius: 50%;
+            padding: 6px;
+            padding-bottom: 2px;
+            background: rgb(255, 255, 255);
+            background-size: 100% 100%;
+            border-radius: 50%;
+            text-align: center;
+            border: 2px solid var(--secondary-background);
+        }
+        .socialmedia .logo img{
+            width: 40px;
+            height: 40px;
+        }
+        .socialmedia i{
+            font-size: 34px;
+            color: rgb(255, 255, 255, .8);
+            border-radius: 50%;
+        }
+        .socialmedia a i:hover{
+            color: rgb(255, 255, 255);
+        }
+
+        .contact a{
+            font-size: 20px;
+            line-height: 8px;
+            color: rgb(255, 255, 255, .8);
+            margin-bottom: 18px;
+            display: flex;
+            gap: 32px;
+            text-decoration: none;
+            transition: 1s;
+        }
+        .socialmedia a:active, .contact a:active{
+            color: rgb(255, 255, 255, .8);
+            text-decoration: underline;
+        }
+        .contact a:hover{
+            transition: 1s;
+            color: rgb(255, 255, 255);
+            padding-left: 5px;
+            text-decoration: underline;
+        }
+        .qlinksTitle, .formTitle, .connectTitle{
+            font-family: var(--medium-text);
+            color: var(--primary-background);
+            background: var(--secondary-background-with-opacity);
+            padding: 8px;
+            padding-left: 70px;
+            padding-right: 70px;
+            width: fit-content;
+            font-size: 24px;
+            text-decoration: underline;
+            margin: auto;
+        }
+        .formBody{
+            background: rgb(201, 224, 248, .5);
+            border: 3px solid rgb(255, 255, 255);
+            padding: 5px;
+            margin: auto;
+            width: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .formBody .fold{
+            width: 40px;
+            height: 40px;
+            margin-right: -12.5px;
+            margin-top: -12.5px;
+            float: right;
+            position: relative;
+            background: rgb(0, 0, 0, .4);
+            box-shadow: 3px -3px rgb(45, 54, 63);
+            border-left: 3px solid rgb(255, 255, 255, .8);
+            border-bottom: 3px solid rgb(255, 255, 255, .8);
+        }
+        .formBody .fold::after{
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,rgb(255, 255, 255, .8) 50%, rgb(42, 54, 63) 50%);
+            z-index: 1;
+        }
+        .formBody label{
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            line-height: 20px;
+            padding: 3px;
+        }
+        .formBody label div{
+            color: var(--primary-background);
+            font-size: 20px;
+        }
+        .formBody label input{
+            border: 2px solid transparent;
+            border-bottom: 2px solid var(--primary-background);
+            background: transparent;
+            color: white;
+            padding: 5px;
+            padding-right: 9px;
+            padding-left: 9px;
+            outline: none;
+            width: 170px;
+            margin-top: -10px;
+        }
+        .textarea{
+            padding: 10px;
+        }
+        .textarea .subject{
+            margin-bottom: 7px;
+        }
+        .textarea textarea{
+            resize: none;
+            overflow: auto;
+            color: var(--primary-background);
+            height: 60px;
+            width: 90%;
+            border:3px solid var(--footer-background);
+            text-align: left;
+            background: transparent;
+            margin-left: 9.5px;
+            outline: none;
+            height: 80px;
+        }
+        .textarea .message{
+            color: var(--primary-background);
+            font-size: 20px;
+        }
+        .textarea textarea::-webkit-scrollbar{
+            width: 7px;
+            border-radius: 12px;
+            background: var(--primary-background);
+        }
+        .textarea textarea::-webkit-scrollbar-thumb{
+            background: var(--secondary-background);
+            border-radius: 10px;
+        }
+        .textarea textarea::-webkit-scrollbar-track{
+            background: white;
+        }
+        .formBody .submit{
+            margin: auto;
+            margin-top: 0;
+            width: fit-content;
+            outline: transparent;
+            background: rgb(255, 255, 255, .8);
+            border: 1px solid rgb(45,54, 63);
+            border-radius: 0;
+        }
+        .formBody .submit button:hover{
+            cursor: pointer;
+            color: var(--secondary-background);
+            background: rgb(255, 255, 255);
+        }
+        .formBody .submit button{
+            color: black;
+            background: rgb(255, 255, 255, .6);
+            padding: 6px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border: 1px solid var(--secondary-background);
+            outline: none;
+            font-family: var(--medium-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            border-radius: 3px;
+            font-size: 18px;
+        }
+        .qlinks .links{
+            text-align: left;
+            padding-left: 50px;
+        }
+        .qlinks .links li{
+            line-height: 52px;
+            list-style:square;
+            color: var(--primary-background);
+        }
+        .qlinks .links li:hover{
+            color: rgb(255, 255, 255);
+        }
+        .qlinks .links li a{
+            color: rgb(255, 255, 255, .8);
+            text-decoration: none;
+            transition: 1s;
+        }
+        .qlinks .links li a:hover{
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+            padding-left: 12px;
+            transition: 1s;
+        }
+        .qlinks .links li a:active{
+            color: var(--secondary-background-with-opacity);
+        }
+        .qlinks .cp{
+            padding-left: 40px;
+            padding-top: 40px;
+            color: rgb(255, 255, 255, .8);
+        }
+        @media only screen and (max-width:878px){
+            .footer{
+                flex-wrap: wrap;
+            }
+            .qlinksTitle, .formTitle, .connectTitle{
+                max-width: 95vw;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <div class="connect">
+            <div class="connectTitle">Connect with us</div>
+            <div class="contact">
+                <div class="phone">
+                    <a href="tel:+254712345678" title="Phone number"><i class="fa-solid fa-mobile-screen"></i>+254712345678</a>
+                </div>
+                <div class="whatsapp">
+                    <a href="https://wa.me/+254113322549" target="_blank" title="Whatsapp"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a>
+                </div>
+                <div class="mail">
+                    <a href="mailto:info@biochar.co.ke" title="Click to email us"><i class="fa-solid fa-envelope"></i>info@biochar.co.ke</a>
+                </div>
+                <div class="location">
+                    <a href="#" title="View in Maps"><i class="fa-solid fa-location-dot"></i>Busia, Kenya</a>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31917.518803486422!2d34.088821711503776!3d0.4597936201598141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177fa140f465654f%3A0x68fa5e85fcab9513!2sBusia!5e0!3m2!1sen!2ske!4v1708693909553!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+            </div>
+            <div class="socialmedia">
+                <div class="logo"><img src="logo6.jpg" alt="" srcset=""></div>
+                <a href="https://www.linkedin.com/in/biochar-climate-resolution-8523522a1/" target="_blank" title="LinkedIn | Biochar Climate (Company) Resolution">
+                <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.x.com/" target="_blank" title="X | Biochar Climate (Company) Resolution">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="form">
+            <div class="formTitle">Get in touch</div>
+            <form action="comments.php" method="post">
+                <div class="formBody">
+                    <div class="fold"></div>
+                    <label>
+                        <div class="name">Name:</div>
+                        <input type="text" name="username" maxlength="45" placeholder="Joe/Jane" required>
+                    </label>
+                    <label>
+                        <div class="name">Email:</div>
+                        <input type="text" name="mail" maxlength="45" placeholder="your@mail.com" required>
+                    </label>
+                    <div class="textarea">
+                        <label>
+                            <div class="sub">Subject:</div>
+                            <input class="subject" type="text" name="subject" maxlength="245" required>
+                        </label>
+                        <div class="message">
+                            Message:
+                            <textarea name="messageBody" placeholder = "Enter message here" maxlength="445" required></textarea>
+                        </div>
+                    </div>
+                    <div class="submit" title="click to submit" name="submit">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="qlinks">
+            <div class="qlinksTitle">Quick Links</div>
+            <div class="links">
+                <li><a href="team.php" target="_blank" title="Biochar | Team">View team profile</a></li>
+                <li><a href="admin.php" target="_blank">Login as an Admin</a></li>
+            </div>
+            <hr style="border:3px solid rgb(255, 255, 255, .8)">
+            <div class="cp">
+                ©Biochar 2024 || All rights reserved
+            </div>
+        </div>
+    </div>
+</body>
+</html>

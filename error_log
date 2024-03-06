@@ -1,0 +1,8 @@
+[29-Feb-2024 05:44:46 America/Chicago] PHP Warning:  Undefined array key "username" in /home2/biocharc/public_html/comments.php on line 48
+[29-Feb-2024 05:44:46 America/Chicago] PHP Warning:  Undefined array key "mail" in /home2/biocharc/public_html/comments.php on line 49
+[29-Feb-2024 05:44:46 America/Chicago] PHP Warning:  Undefined array key "subject" in /home2/biocharc/public_html/comments.php on line 50
+[29-Feb-2024 05:44:46 America/Chicago] PHP Warning:  Undefined array key "messageBody" in /home2/biocharc/public_html/comments.php on line 51
+[01-Mar-2024 00:15:29 America/Chicago] PHP Warning:  Undefined array key "username" in /home2/biocharc/public_html/comments.php on line 48
+[01-Mar-2024 00:15:29 America/Chicago] PHP Warning:  Undefined array key "mail" in /home2/biocharc/public_html/comments.php on line 49
+[01-Mar-2024 00:15:29 America/Chicago] PHP Warning:  Undefined array key "subject" in /home2/biocharc/public_html/comments.php on line 50
+[01-Mar-2024 00:15:29 America/Chicago] PHP Warning:  Undefined array key "messageBody" in /home2/biocharc/public_html/comments.php on line 51
