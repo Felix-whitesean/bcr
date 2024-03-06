@@ -91,6 +91,7 @@ body{
     color: var(--secondary-background);
     font-family: var(--normal-text);
     padding-bottom: 40px;
+    max-width: 80vw;
 }
 .profile .head{
     background: var(--secondary-background);
@@ -135,6 +136,7 @@ body{
     max-height: 280px;
     padding: 20px;
     font-size: 18px;
+    max-width: 80vw;
 }
 .team .teamNames .names::-webkit-scrollbar, .aboutPerson::-webkit-scrollbar{
     background: rgb(0, 0, 0, .8);
@@ -161,6 +163,7 @@ body{
     padding: 8px 5px;
     padding-top: 9px;
     font-size: 32px;
+    color: var(--secondary-background);
 }
 .personalSocials a i{
     font-size: 32px;
