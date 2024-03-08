@@ -70,8 +70,11 @@
             list-style: none;
             padding-bottom: 5px;
         }
-        .nav li .page{
-            display: none
+        .nav li div{
+            display: none;
+            position: absolute;
+            margin-left: -32px;
+            margin-top: 27px;
         }
         .nav li a{
             transition: 0.5s;
@@ -101,37 +104,64 @@
                 gap: 5px;
             }
             .nav{
-                background: var(--secondary-background-with-opacity);;
+                background: transparent;
                 flex-direction: column;
-                display: none;
+                width: 0;
+                transition: .5s;
+                height: 50vh;
             }
             .bars{
-                padding: 13px;
+                padding: 10px 17px;
                 padding-bottom: 10px;
                 display: flex;
-                background: var(--secondary-background);
+                background: rgb(0, 0, 0, .5);
                 float: right;
-                right: 30px;
-                top: 0;
+                right: 3px;
+                top: 5px;
                 width: fit-content;
                 position: fixed;
                 z-index: 1111;
+                border-radius: 5px;
+                color: white;
+            }
+            .nav li i{
+                display: none;
             }
             .bars i{
                 color: var(--primary-background);
-                font-size: 23px;
+                font-size: 16px;
             }
             .bars:hover{
                 cursor: pointer;
-                background: var(--secondary-background-with-opacity);
+                background: var(--secondary-background);
+                border: 1px solid;
             }
             .navDisplay{
                 display: flex;
                 background: var(--secondary-background);
                 padding: 12px 32px;
+                width: 150px;
+                height: 50vh;
+                color: white;
+                right: 0;
+                padding-top: 70px;
+                overflow-y: auto;
             }
             .navDisplay li{
-                padding: 0 15px;
+                display: block;
+                padding: 4px 15px;
+            }
+            .navDisplay li a{
+                border-bottom: transparent;
+            }
+            .navDisplay li div{
+                display: initial;
+                position: relative;
+                margin-left: 0;
+                margin-top: 0;
+            }
+            .navDisplay li i{
+                display: initial;
             }
             .navDisplay li a:hover{
                 transition: 0.5s;
@@ -168,6 +198,7 @@
             head.addEventListener('click', function(){
                 window.location = "index.php"
             })
+            li = document.querySelector('.nav').querySelectorAll('li');
             navLinks = document.querySelectorAll('a');
             var cur = window.location.href;
             first = document.querySelector('.first');
@@ -176,6 +207,14 @@
                     navLinks[i].style.borderBottom = "2px solid";
                     navLinks[i].style.color = "rgb(180, 180, 180)";
                 }
+            }
+            for(i = 0; i < li.length; i++){
+                li[i].addEventListener("mouseenter", function(event){
+                    event.target.querySelector('div').style.display = "initial";
+                })
+                li[i].addEventListener("mouseleave", function(event){
+                    event.target.querySelector('div').style.display = "none";
+                })
             }
             hambugher = document.querySelector('.bars');
             nav = document.querySelector('.nav');
