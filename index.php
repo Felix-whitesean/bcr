@@ -30,8 +30,8 @@
                 <p>Biochar Climate Resolution (BCR), a Kenyan-based company, addresses the climate crisis by focusing on Net-Zero planning and 
                 rapid carbon dioxide removal (CDR) to meet world's climate goals by 2050. BCR emphasizes the urgent need to curb greenhouse gas 
                 emissions and simultaneously remove carbon at scale, creating a carbon-negative society. The company operates in the biochar industry, 
-                producing products with the potential to sequester CO2 for centuries. BCR's efforts extend beyond being a carbon sink, recognizing nature's 
-                multifaceted functions essential for life on Earth. By deploying biochar products, BCR aims to store CO2 for extended periods, contributing 
+                producing products with the potential to sequester CO₂ for centuries. BCR's efforts extend beyond being a carbon sink, recognizing nature's 
+                multifaceted functions essential for life on Earth. By deploying biochar products, BCR aims to store CO₂ for extended periods, contributing 
                 to a net-negative emissions world. The company is actively involved in reducing short-lived climate pollutants, such as methane and black carbon, 
                 addressing both climate change and air pollution. BCR's overarching philosophy is to minimize human interference in the climate system while 
                 catalyzing sustainable solutions for a resilient and climate-responsible future in Kenya.</p>
@@ -93,7 +93,7 @@
                         <div class="imageSlidesContainer">
                                 <div class="image1"><li>To build biochar industry in Kenya for climate resilience and create more sustainable future for the posterity</li></div>
                                 <div class="image2"><li>To advance agricultural and forestry biomass utilization on carbon sequestration production</li></div>
-                                <div class="image3"><li>To curb CO2 emissions</li> </div>
+                                <div class="image3"><li>To curb CO₂ emissions</li> </div>
                         </div>
                         <div class="fnext">></div>   
                     </div>
