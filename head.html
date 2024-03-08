@@ -170,13 +170,11 @@
             })
             navLinks = document.querySelectorAll('a');
             var cur = window.location.href;
-            pages = document.querySelectorAll('.page');
             first = document.querySelector('.first');
             for(i=0; i<navLinks.length; i++){
                 if(cur == navLinks[i].href){
                     navLinks[i].style.borderBottom = "2px solid";
                     navLinks[i].style.color = "rgb(180, 180, 180)";
-                    pages[i].style.display = "block";
                 }
             }
             hambugher = document.querySelector('.bars');

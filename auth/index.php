@@ -495,7 +495,7 @@
                                     <div class="title"><?php echo($row['title']);?></div>
                                     <div class="email"><?php echo($row['email']);?></div>
                                     <div><?php echo($row['whatsapp']);?></div>
-                                    <div style="cursor: pointer; color: rgb(255, 24, 24);" class="delete"><i class="fa-solid fa-user-minus"></i> Remove <?php echo($row['firstname']);?></div>
+                                    <div style="cursor: pointer; color: rgb(220, 20, 60);" class="delete"><i class="fa-solid fa-user-minus"></i> Remove <?php echo($row['firstname']);?></div>
                                     <a class="del" style="display: none;" href="delete.php?id=<?php echo "$row[memberId]";?>"></a>
                                     <div style="cursor: pointer;"><a style="color: rgb(200, 200, 30);" href="members_update.php?id=<?php echo "$row[memberId]";?>">Update</a></div>
                             </div>
