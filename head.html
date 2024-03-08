@@ -70,6 +70,9 @@
             list-style: none;
             padding-bottom: 5px;
         }
+        .nav li .page{
+            display: none
+        }
         .nav li a{
             transition: 0.5s;
             color: var(--primary-background);
@@ -79,8 +82,8 @@
         }
         .nav li a i{
             padding: 5px;
-            border-radius: 50%;
-            border: 1px solid;
+            /* border-radius: 50%;
+            border: 1px solid; */
             margin-left: 5px;
         }
         .nav li a:hover{
@@ -150,10 +153,10 @@
             </div>
         </div>
         <div class="nav">
-            <li class="first"><a href="index.php"><i class="fa-solid fa-house"></i><div>Home</div></a></li>
-            <li><a href="team.php"><i class="fa-solid fa-users"></i><div>Team</div></a></li>
-            <li><a href="team.php#about"><i class="fa-solid fa-circle-info"></i><div>About Us</div></a></li>
-            <li><a href="index.php#mission"><i class="fa-solid fa-note-sticky"></i><div>Mission</div></a></li>
+            <li class="first"><a href="index.php"><i class="fa-solid fa-house"></i><div class="page">Home</div></a></li>
+            <li><a href="team.php"><i class="fa-solid fa-users"></i><div class="page">Team</div></a></li>
+            <li><a href="team.php#about"><i class="fa-solid fa-circle-info"></i><div class="page">About Us</div></a></li>
+            <li><a href="index.php#mission"><i class="fa-solid fa-note-sticky"></i><div class="page">Mission</div></a></li>
         </div>
         <div class="bars">
             <i class="fa-solid fa-bars"></i>
@@ -167,11 +170,13 @@
             })
             navLinks = document.querySelectorAll('a');
             var cur = window.location.href;
+            pages = document.querySelectorAll('.page');
             first = document.querySelector('.first');
             for(i=0; i<navLinks.length; i++){
                 if(cur == navLinks[i].href){
                     navLinks[i].style.borderBottom = "2px solid";
                     navLinks[i].style.color = "rgb(180, 180, 180)";
+                    pages[i].style.display = "block";
                 }
             }
             hambugher = document.querySelector('.bars');

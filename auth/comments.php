@@ -296,10 +296,9 @@
                 // Get the current time
                 var currentTime = new Date();
                 // Convert milliseconds to days, hours, minutes, and seconds
-                var timeDiff = currentTime.getTime() - specificTime.getTime();
-
+                var timeDiff = currentTime.getTime() - specificTime.getTime() - 32400;
                 var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 9;
+                var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 

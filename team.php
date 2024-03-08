@@ -19,7 +19,7 @@
     ?>
     <div class="pagecontent">
         <div class="section1Title">
-            Biochar | Team
+            BCR | Team
         </div>
         <div class="team">
             <div class="teamNames">
@@ -88,7 +88,7 @@
         <hr id="about">
         <div class="about">
             <div class="aboutTitle">
-                Biochar |About us
+                BCR |About us
             </div>
             <div class="aboutcontent">
                 <img class="aboutimage" src="1705993663049.jpeg">
