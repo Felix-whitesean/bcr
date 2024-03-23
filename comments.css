@@ -25,7 +25,7 @@ body{
     padding: 5px 10px;
     width: auto;
     justify-content: space-between;
-    box-shadow: 2px 2px 5px rgb(0, 50, 50);
+    box-shadow: 2px 2px 5px rgb(20, 117, 20);
 }
 .messagedisplay .title .confirm, .messagedisplay .title .change{
     background: rgb(0, 0, 0);
@@ -66,7 +66,7 @@ body{
     background: rgb(255, 255, 255, .7);
     border-radius: 4px;
     padding: 10px 58px;
-    color:rgb(0, 50, 50);
+    color:rgb(20, 117, 20);
     margin: auto;
     position: absolute;
     bottom: 10px;
@@ -95,7 +95,7 @@ body{
     display: none;
 }
 .form textarea::-webkit-scrollbar, .messagebody::-webkit-scrollbar{
-    background: rgb(0, 50, 50);
+    background: rgb(20, 117, 20);
     border-radius: 30px;
     width: 7px;
 }
@@ -123,7 +123,7 @@ body{
     background: rgb(255, 255, 197);
     color: rgb(0, 155, 155);
     padding: 7px 20px;
-    border: 2px solid rgb(0, 50, 50);
+    border: 2px solid rgb(20, 117, 20);
     font-family: var(--normal-text);
 }
 .form label input:hover{
@@ -135,7 +135,7 @@ body{
     height: 160px;
     border: 2px solid rgb(0, 155, 155);
     background: rgb(255, 255, 197);
-    color: rgb(0, 50, 50);
+    color: rgb(20, 117, 20);
     padding: 14px 19px;
 }
 .thankyoumessage{
