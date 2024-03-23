@@ -9,105 +9,105 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --primary-background: rgb(240, 240, 240);
+            --secondary-background: rgb(20, 117, 20);
+            --secondary-background-with-opacity: rgb(20, 117, 20, .5);
+            --title-text: "Jacques Francois Shadow", serif;
+            --medium-text: "Irish Grover", system-ui;
+            --normal-text: "Itim", cursive;
+            --footer-background: rgb(31, 36, 45, .8);
+            --footer-color: rgb(153, 153, 153);
+        }
+        body{
+            /* background-image: url(logo1.png); */
+            background-blend-mode: color;
+            background-color: rgb(244, 228, 215, .99);
+        }
+        .logo{
+            text-align: center;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .logo img{
+            width: 50px;
+            height: 50px;
+            align-self: flex-start;
+        }
+        .logo h1{
+            color: var(--secondary-background);
+            align-self: flex-start;
+            font-family: var(--title-text);
+            border-bottom: 2px solid;
+            font-size: 23px;
+        }
+        .body{
+            width: 50%;
+            min-width: 300px;
+            background: rgb(240, 240, 240);
+            box-shadow: 2px 2px 5px rgb(20, 117, 20);
+            border: 1px solid black;
+            margin: auto;
+            padding: 10px 20px;
+            margin-bottom: 50px;
+        }
+        .body h4{
+            color: var(--secondary-background);
+        }
+        .body p{
+            color: black;
+            font-family: var(--normal-text);
+        }
+        .footer{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            font-family: var(--medium-text);
+            background: var(--footer-background);
+        }
+        .socials{
+            background: rgb(0, 0, 0, .65);
+            padding: 10px 30px;
+            color: var(--primary-background);
+            display: flex;
+            position: relative;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            letter-spacing: 1.5px;
+        }
+        .socials .icons{
+            align-self: center;
+            display: flex;
+            gap: 20px
+        }
+        .socials .icons a{
+            color: var(--primary-background);
+            align-self: center;
+        }
+        .socials .icons a i{
+            font-size: 32px;
+        }
+        .footer .web a{
+            color: var(--secondary-background);
+            font-family: var(--normal-text);
+        }
+        @media only screen and (max-width:878px){
+            .footer .socials  h4{
+                display: none;
+            }
+            .footer{
+                position: initial;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="email content">
-        <style>
-            :root{
-                --primary-background: rgb(240, 240, 240);
-                --secondary-background: rgb(20, 117, 20);
-                --secondary-background-with-opacity: rgb(20, 117, 20, .5);
-                --title-text: "Jacques Francois Shadow", serif;
-                --medium-text: "Irish Grover", system-ui;
-                --normal-text: "Itim", cursive;
-                --footer-background: rgb(31, 36, 45, .8);
-                --footer-color: rgb(153, 153, 153);
-            }
-            body{
-                /* background-image: url(logo1.png); */
-                background-blend-mode: color;
-                background-color: rgb(244, 228, 215, .99);
-            }
-            .logo{
-                text-align: center;
-                width: 100%;
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .logo img{
-                width: 50px;
-                height: 50px;
-                align-self: flex-start;
-            }
-            .logo h1{
-                color: var(--secondary-background);
-                align-self: flex-start;
-                font-family: var(--title-text);
-                border-bottom: 2px solid;
-                font-size: 23px;
-            }
-            .body{
-                width: 50%;
-                min-width: 300px;
-                background: rgb(240, 240, 240);
-                box-shadow: 2px 2px 5px rgb(20, 117, 20);
-                border: 1px solid black;
-                margin: auto;
-                padding: 10px 20px;
-                margin-bottom: 50px;
-            }
-            .body h4{
-                color: var(--secondary-background);
-            }
-            .body p{
-                color: black;
-                font-family: var(--normal-text);
-            }
-            .footer{
-                position: absolute;
-                width: 100%;
-                bottom: 0;
-                font-family: var(--medium-text);
-                background: var(--footer-background);
-            }
-            .socials{
-                background: rgb(0, 0, 0, .65);
-                padding: 10px 30px;
-                color: var(--primary-background);
-                display: flex;
-                position: relative;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                letter-spacing: 1.5px;
-            }
-            .socials .icons{
-                align-self: center;
-                display: flex;
-                gap: 20px
-            }
-            .socials .icons a{
-                color: var(--primary-background);
-                align-self: center;
-            }
-            .socials .icons a i{
-                font-size: 32px;
-            }
-            .footer .web a{
-                color: var(--secondary-background);
-                font-family: var(--normal-text);
-            }
-            @media only screen and (max-width:878px){
-                .footer .socials  h4{
-                    display: none;
-                }
-                .footer{
-                    position: initial;
-                }
-            }
-        </style>
         <div class="logo">
-            <img src="https://biocharclimateresolution.org/ff.png" ALT="logo">
+            <img style="width: 50px; height: 50px;"src="https://biocharclimateresolution.org/ff.png" ALT="logo">
             <h1>Biochar Climate Resolution (BCR)</h1>
         </div>
         <div class="body">
