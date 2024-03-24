@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom web</title>
+  <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
+  <style>
+    .chatbot{
+      position: absolute;
+      bottom: 50px;
+      right: 10px;
+    }
+    .body{
+      background: rgb(255, 240, 235);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: 2px solid rgb(50, 40, 135);
+      width: 400px;
+      position: relative;
+    }
+    .body h4{
+      color: white;
+      background: rgb(50, 40, 135);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 20px 10px;
+      margin: 0;
+    }
+    .body p{
+      color: rgb(42, 154, 42);
+      text-align: center;
+      background:rgb(25, 22, 92);
+      margin: 0;
+    }
+    .chat-container {
+      margin: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      height: 400px;
+      overflow-y: auto;
+    }
+    .chat-container::-webkit-scrollbar{
+      width: 3px;
+      border-radius: 10px;
+      background: rgb(255, 240, 235);
+    }
+    .chat-history {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: auto;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .chat-history li {
+      margin-bottom: 10px;
+      border: 1px solid;
+      max-width: 60%;
+      height: auto;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .chat-history li.user {
+      background-color: rgb(200, 200, 235);
+      border-radius: 5px;
+      align-self: flex-end;
+    } 
+    .chat-history li.bot {
+      /* background-color: rgb(150, 180, 200); */
+      background: rgb(50, 40, 135);
+      border-bottom-right-radius: 0;
+      /* color: rgb(125, 22, 22); */
+      color: white;
+      align-self: flex-start;
+    }
+    .chat-container form{
+      background: rgb(127, 127, 127);
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+      width: 90%;
+      margin: 0;
+    }
+    .chat-container form .input{
+      display: flex;
+    }
+    .chat-container form .input textarea{
+      flex: 90%;
+      padding: 8px 10px;
+      overflow: auto;
+      word-wrap: wrap;
+      resize: none;
+      border-radius: 20px;
+      outline: 1px solid black;
+      height: 40px;
+    }
+    .chat-container form .input button{
+      align-self: center;
+      color: rgb(50, 40, 135);
+      border: 2px solid transparent;
+      outline: transparent;
+      background: transparent;
+    }
+    .chat-container form .input button:hover{
+      cursor: pointer;
+    }
+    .chat-container form .input button i{
+      font-size: 32px;
+    }
+    .chat-history li.bot:last-child{
+      margin-bottom: 150px;
+    }
+    .x, .toggleBtn{
+      border: 2px solid;
+      user-select: none;
+      border-radius: 10px;
+      background: rgb(50, 40, 135);
+      color:rgb(225, 252, 252);
+      width: fit-content;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: fixed;
+      padding: 2px 5px;
+    }
+    .x{
+      color: white;
+      bottom: 8px;
+      font-size: 27px;
+      right: 8px;
+    }
+    .toggleBtn{
+      animation: 1s radiate infinite; 
+    }
+    @keyframes radiate {
+      0%{
+        transition: .5s;
+        box-shadow: 2px 2px 6px green;
+      }
+      100%{
+        transition: .5s;
+        box-shadow: -2px -2px 6px green;
+      }
+    }
+    .x:hover, .toggleBtn:hover{
+      cursor: pointer;
+      background: rgb(50, 40, 135, .9);
+      outline: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot">
+    <div class="body">
+      <h4>Krypense Chatbot</h4>
+      <p>Online</p>
+    
+      <div class="chat-container">
+        <ul class="chat-history"></ul>
+        <form>
+          <div class="input">
+            <textarea type="text" id="user-message" placeholder="Ask me what you want to know about us..."></textarea>
+            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toggleBtn">
+    <p>Let us chat</p>
+  </div>
+  <div class="x">
+    <i class="fa-solid fa-circle-xmark"></i>
+  </div>
+  <script>
+    messageForm = document.getElementById("user-message");
+    chatHistory = document.querySelector(".chat-history");
+    toggleBtn = document.querySelector(".toggleBtn");
+    chatbot = document.querySelector('.chatbot');
+    submit = document.querySelector(".btn");
+    x = document.querySelector(".x");
+    chatbot.style.display = "none";
+    x.style.display = "none";
+
+    toggleBtn.addEventListener("click", function(){
+      chatbot.style.display = 'initial';
+      toggleBtn.style.display= "none";
+      x.style.display= "initial";
+    });
+    x.addEventListener("click", function(){
+      chatbot.style.display = 'none';
+      toggleBtn.style.display= "initial";
+      x.style.display= "none";
+    });
+    const messageElement = document.createElement("li");
+    messageElement.textContent = "How can I help you?";
+    messageElement.classList.add("chat-history", "bot");
+    chatHistory.appendChild(messageElement);
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+
+    submit.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      var userMessage = messageForm.value.trim();
+
+      if (userMessage) {
+        appendMessage(userMessage, "user");
+        messageForm.value = "";
+        fetch("/messages/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: userMessage })
+        })
+        .then(response => response.json())
+        .then(data => {
+          appendMessage(data.message, "bot");
+        })
+        .catch(error => console.error(error));
+      }
+    });
+
+    function appendMessage(message, type) {
+      const messageElement = document.createElement("li");
+      messageElement.textContent = message;
+      messageElement.classList.add("chat-history", type);
+      chatHistory.appendChild(messageElement);
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+  </script>
+</body>
+</html>
