@@ -10,7 +10,7 @@
         "Reply-To" => "info@biocharclimateresolution.org"
     );
 
-    $message = file_get_contents("mail-template.php");
+    $message = file_get_contents("mail-template.html");
 
     $send = mail($to, $subject, $message, $headers);
 
