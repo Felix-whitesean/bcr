@@ -1,0 +1,255 @@
+:root{
+    --green: rgb(20, 117, 20);
+    --brown: rgb(227, 120, 30);
+    --first-yellow: rgb(247, 180, 10);
+    --green-7: rgb(20, 117, 20, .7);
+    --brown-8: rgb(227, 120, 30, .8);
+    --first-yellow-8: rgb(247, 180, 10, .8);
+    --white: rgb(240, 240, 240);
+    --tertiary-text: "Miltonian", serif;
+    --tertiary-text: "Inknut Antiqua", serif;
+    --inter-text: "Inter", sans-serif;
+    --curly: "Sevillana", cursive;
+}
+html{
+    padding: 0;
+    margin: 0;
+}
+body {
+    margin: 0;
+    margin-left: 4px;
+    padding: 0;
+    font-family: var(--inter-text);
+    display: none;
+}
+.loadingBackground{
+    width: 100%;
+    height: 10vh;
+    z-index: 11111;
+}
+.template{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    background: var(--white);
+}
+@keyframes flyin {
+    0%{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.loading {
+    top: 250px;
+    margin: auto;
+    border: 5px solid var(--primary-background);
+    border-radius: 50%;
+    border-top: 5px solid var(--primary-background);
+    border-right: 5px solid var(--primary-background);
+    width: 80px;
+    height: 80px;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    position: relative;
+}
+.constant{
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    margin-top: 170px;
+}
+.constant img{
+    width: 50px;
+    height: 50px;
+    animation: loadImg 1.5s linear infinite;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loadImg {
+    0% {
+        opacity: 0.5; 
+    }
+    10%{
+        opacity: .9;
+        transform: scale(.8); 
+    }
+    90% {
+        transform: scale(.5);   
+    }
+}
+.navigation{
+    flex: 0 0 208px;
+    background: var(--green);
+    height: 100vh;
+    box-shadow: 0 4px 8px 2px rgb(0, 0, 0);
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    display: flex;
+}
+.navigation .name{
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    font-family: var(--tertiary-text);
+}
+.navigation hr{
+    background: 1px solid var(--white);
+}
+
+.name .logo img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+.navigation .name .acronym{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    font-size: 24px;
+}
+.navigation .topics{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.navigation .topics a{
+    color: black;
+    text-decoration: none;
+    line-height: 46px;
+    font-size: 19px;
+    letter-spacing: 1.4px;
+    transition: 1s;
+    display: flex;
+}
+.navigation .topics a:visited{
+    color: black;
+}
+.navigation .topics a i{
+    align-self: center;
+}
+.navigation .topics a:hover{
+    transition: 1s;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    box-sizing: border-box;
+    color: var(--white);
+    justify-content: space-between;
+    padding-left: 20px;
+}
+.follow{
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    background: var(--brown);
+    margin-top: 50%;
+    height: fit-content;
+    position: absolute;
+}
+.follow .social{
+    padding: 7px 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+}
+.follow h5{
+    padding: 0 10px;
+    color:black;
+    background: var(--brown);
+    line-height: 30px;
+}
+.follow a{
+    color: black;
+    font-size: 27px;
+    align-self: flex-start;
+    margin: 0;
+}
+.follow a i{
+    color: black;
+    margin: 0;
+}
+.view-window{
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+.view-window .top{
+    height: 50px;
+    background: var(--green);
+    width: calc(98vw - 218px);
+    position: fixed;
+    padding: 2px 7px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 11;
+}
+.view-window .top .popup{
+    position: absolute;
+    color: var(--white);
+    background: black;
+    box-shadow: 2px 2px 3px var(--brown) inset, -2px -2px 3px var(--brown) inset;
+    border: 1px solid;
+    width: auto;
+    top: 52px;
+    text-wrap: wrap;
+    padding: 10px 13px;
+    display: none;
+    z-index: 1111;
+    max-width: 85vw;
+    margin: auto;
+}
+.view-window .top button, .view-window .top a, .view-window .top img{
+    background: #F0F0F0;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px 26px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    align-self: flex-end;
+}
+.view-window .top img{
+    background: transparent;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+}
+.view-window .top a{
+    background: transparent;
+    border: 0;
+    color: var(--white);
+}
+.view-window .top a button{
+    color: black;
+    text-decoration: none;
+}
+.view-window .top button:hover{
+    background: #F0F0F0EF;
+    cursor: pointer;
+    outline: 1px solid black;
+}

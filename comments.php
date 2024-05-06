@@ -57,11 +57,11 @@
                 </div>
 
                 <div class="details">
-                    <div class="name">Name: <span><?php echo($uname)  ?></span></div>
-                    <div class="mail">Mail: <span><?php echo($mail) ?></span></div>
+                    <div class="name">From: <span><?php echo($uname)  ?></span></div>
+                    <div class="mail">Email: <span><?php echo($mail) ?></span></div>
                     <div class="message">
                         Message:
-                        <span><div class="subject"><?php echo($subject)?></div></span>
+                        <span><div class="subject">Title: <?php echo($subject)?></div></span>
                         <span><div class="messagebody"><?php echo($message)?></div></span>
                     </div>
                     <form action="" method="post">

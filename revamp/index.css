@@ -1,0 +1,759 @@
+:root{
+    --green: rgb(20, 117, 20);
+    --brown: rgb(227, 120, 30);
+    --first-yellow: rgb(247, 180, 10);
+    --green-7: rgb(20, 117, 20, .7);
+    --brown-8: rgb(227, 120, 30, .8);
+    --first-yellow-8: rgb(247, 180, 10, .8);
+    --white: rgb(240, 240, 240);
+    --tertiary-text: "Miltonian", serif;
+    --tertiary-text: "Inknut Antiqua", serif;
+    --inter-text: "Inter", sans-serif;
+    --curly: "Sevillana", cursive;
+}
+html{
+    padding: 0;
+    margin: 0;
+}
+body {
+    margin: 0;
+    margin-left: 4px;
+    padding: 0;
+    font-family: var(--inter-text);
+    display: none;
+}
+.loadingBackground{
+    width: 100%;
+    height: 10vh;
+    z-index: 11111;
+}
+.template{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    background: var(--white);
+}
+@keyframes flyin {
+    0%{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    90%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.loading {
+    top: 250px;
+    margin: auto;
+    border: 5px solid var(--primary-background);
+    border-radius: 50%;
+    border-top: 5px solid var(--primary-background);
+    border-right: 5px solid var(--primary-background);
+    width: 80px;
+    height: 80px;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    position: relative;
+}
+.constant{
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    margin-top: 170px;
+}
+.constant img{
+    width: 50px;
+    height: 50px;
+    animation: loadImg 1.5s linear infinite;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loadImg {
+    0% {
+        opacity: 0.5; 
+    }
+    10%{
+        opacity: .9;
+        transform: scale(.8); 
+    }
+    90% {
+        transform: scale(.5);   
+    }
+}
+.navigation{
+    flex: 0 0 208px;
+    background: var(--green);
+    height: 100vh;
+    box-shadow: 0 4px 8px 2px rgb(0, 0, 0);
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    display: flex;
+}
+.navigation .name{
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    font-family: var(--tertiary-text);
+}
+.navigation hr{
+    background: 1px solid var(--white);
+}
+
+.name .logo img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+.navigation .name .acronym{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    font-size: 24px;
+}
+.navigation .topics{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+.navigation .topics a{
+    color: black;
+    text-decoration: none;
+    line-height: 46px;
+    font-size: 19px;
+    letter-spacing: 1.4px;
+    transition: 1s;
+    display: flex;
+}
+.navigation .topics a:visited{
+    color: black;
+}
+.navigation .topics a i{
+    align-self: center;
+}
+.navigation .topics a:hover{
+    transition: 1s;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    box-sizing: border-box;
+    color: var(--white);
+    justify-content: space-between;
+    padding-left: 20px;
+}
+.follow{
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    background: var(--brown);
+    margin-top: 50%;
+    height: fit-content;
+    position: absolute;
+}
+.follow .social{
+    padding: 7px 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+}
+.follow h5{
+    padding: 0 10px;
+    color:black;
+    background: var(--brown);
+    line-height: 30px;
+}
+.follow a{
+    color: black;
+    font-size: 27px;
+    align-self: flex-start;
+    margin: 0;
+}
+.follow a i{
+    color: black;
+    margin: 0;
+}
+.view-window{
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+.view-window .top{
+    height: 50px;
+    background: var(--green);
+    width: calc(98vw - 218px);
+    position: fixed;
+    padding: 2px 7px;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 11;
+}
+.view-window .top .popup{
+    position: absolute;
+    color: var(--white);
+    background: black;
+    box-shadow: 2px 2px 3px var(--brown) inset, -2px -2px 3px var(--brown) inset;
+    border: 1px solid;
+    width: auto;
+    top: 52px;
+    text-wrap: wrap;
+    padding: 10px 13px;
+    display: none;
+    z-index: 1111;
+    max-width: 85vw;
+    margin: auto;
+}
+.view-window .top button, .view-window .top a, .view-window .top img{
+    background: #F0F0F0;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px 26px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    align-self: flex-end;
+}
+.view-window .top img{
+    background: transparent;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+}
+.view-window .top a{
+    background: transparent;
+    border: 0;
+    color: var(--white);
+}
+.view-window .top a button{
+    color: black;
+    text-decoration: none;
+}
+.view-window .top button:hover{
+    background: #F0F0F0EF;
+    cursor: pointer;
+    outline: 1px solid black;
+}
+.landing{
+    margin-top: 55px;
+    padding: 30px 5px;
+    background: linear-gradient(120deg, rgb(20, 117, 20) 80%, rgb(37, 219, 37, .8));
+    height: 100%;
+    width: 100%;
+}
+.landing .self-typing{
+    display: flex;
+    margin: 0;
+    text-align: left;
+    max-width: 90vw;
+    background: rgb(20, 117, 20);
+    color: var(--white);
+    font-family: var(--curly);
+    font-size: 19px;
+    letter-spacing: 1.2px;
+}
+.landing .self-typing h3{
+    position: relative;
+    --white-space: nowrap;
+    color: var(--white);
+    margin-top: -15px;
+    text-wrap: nowrap;
+}
+.landing .self-typing h3 i{
+    color: var(--brown);
+    font-size: 30px;
+}
+.landing .self-typing h3::after{
+    margin: 0;
+    margin-top: -7px;
+    left: 0;
+    content: "\f303";
+    height: 130%;
+    width: 100%;
+    animation: typing 3s steps(31) infinite;
+    position: absolute;
+    background: rgb(20, 117, 20);
+    font-family: "Font Awesome 5 Free";
+    padding-left: 8px;
+    border-top-left-radius: 30px;
+    animation-delay: 5s;
+    margin-left: -8px;
+    font-size: 17px;
+    line-height: 20px;
+}
+@keyframes typing {
+    0%{display: flex;
+        color: var(--brown);
+        }
+    10%{transform: translateY(20%);}
+    20%{color: var(--white);transform: translateY(5%);}
+    25%{transform: translateY(20%);}
+    30%{transform: translateY(5%);}
+    35%{transform: translateY(20%);}
+    40%{transform: translateY(5%);}
+    45%{transform: translateY(20%);}
+    50%{transform: translateY(5%);}
+    55%{transform: translateY(20%);}
+    60%{transform: translateY(5%);}
+    65%{transform: translateY(20%);}
+    70%{transform: translateY(5%);}
+    75%{transform: translateY(20%);}
+    80%{transform: translateY(5%);}
+    85%{transform: translateY(20%);}
+    99%{left: 100%;margin: 0 25px 0 11px;transform: translateY(5%);}
+}
+.container{
+    padding: 30px;
+    background-image: url('10399 (1).jpg');
+    background-size: contain 90vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    border: 1px solid black;
+    width: 90%;
+    display: flex;
+    gap: 12px;
+    padding-bottom: 90px;
+}
+.container .holder{
+    display: flex;
+    gap: 10px;
+}
+.container .floatingpage{
+    position: fixed;
+    width: 0;
+    transition: 2s;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgb(0, 0, 0, .7);
+    padding: 10px 30px;
+    border: 1px solid black;
+    z-index: 111;
+    display: none;
+}
+.container .floatingpage form{
+    background: var(--white);
+    border-radius: 4px;
+    max-width: 70%;
+    height: auto;
+    padding: inherit;
+    margin: auto;
+    width: fit-content
+}
+.container .floatingpage i{
+    float: right;
+    font-size: 14px;
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    background:var(--white);
+    padding: 10px 12px;
+    margin-right: border-box;
+    user-select: none;
+}
+.container .floatingpage i:hover{
+    cursor: pointer;
+    color: var(--white);
+    outline: 1px solid var(--white);
+    background: var(--green);
+}
+.container .floatingpage form label{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding: 10px;
+    text-align: left;
+}
+.container .floatingpage form label fieldset{
+    width: 270px;
+    margin: 0;
+    padding: 0;
+    border:1px solid transparent;
+    outline: 1px solid transparent;
+    background: transparent;
+    border-bottom: 1px solid black;
+    align-self: flex-start;
+    display: flex;
+}
+.container .floatingpage form label input{
+    width: 98%;
+    border:1px solid transparent;
+    outline: 1px solid transparent;
+    background: transparent;
+}
+.container .floatingpage form input[type="checkbox"]{
+    margin: 10px;
+    align-self: flex-start;
+    padding: 3px;
+    width: fit-content;
+    padding: 3px;
+    text-align: left;
+    border-radius: 13px;
+}
+.container .floatingpage form input[type="checkbox"]:hover{
+    cursor: pointer;
+    outline: 1px solid var(--green)
+}
+.container .floatingpage form a{
+    color: black;
+}
+.container .floatingpage form a:hover{
+    color: var(--green);
+}
+.container .floatingpage button{
+    padding: 5px 20px;
+    border: 1px solid var(--green);
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    min-width: 60%;
+}
+.container .floatingpage button:hover{
+    color: white;
+    background: var(--green);
+    outline: 2px solid black;
+}
+.container .vision, .container .mission{
+    padding: 7px;
+    border-radius: 10px;
+    width: 236px;
+    height: 308px;
+    text-align: center;
+}
+.container .vision{
+    background: var(--brown-8);
+}
+.container .mission{
+    background: var(--first-yellow-8);
+}
+.container .fullname h5{
+    color: var(--white);
+    font-size: 32px;
+    background: rgb(0, 0, 0, .8);
+    text-transform: uppercase;
+    font-family: var(--tertiary-text);
+    padding: 0;
+    border-radius: 10px;
+    text-align: center;
+}
+.container .fullname .buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.container .fullname .buttons #donate, .container .fullname .buttons #join{
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+    outline: none;
+    padding: 3px 7%;
+    text-align: center;
+    user-select: none;
+    border: 2px solid;
+}
+.container .fullname .buttons #donate{
+    background: var(--green);
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    color: var(--white);
+}
+.container .fullname .buttons #join{
+    background: var(--brown);
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+}
+.container .fullname .buttons #donate:hover{
+    cursor: pointer;
+    background: var(--brown-8);
+    outline: 2px solid black;
+}
+.container .fullname .buttons #join:hover{
+    cursor: pointer;
+    background: var(--first-yellow-8);
+    outline: 2px solid var(--white);
+}
+.landing .meta{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--white);
+    color: black;
+    padding: 2px;
+    margin: 0;
+    user-select: none;
+    border-radius : 2px;
+    display:  flex;
+    gap: 10px;
+}
+.landing .hidden{
+    display: none;
+}
+.landing .meta i{
+    padding: 2px 8px;
+    float: right;
+    align-self: center;
+    border: 2px solid var(--green);
+}
+.landing .meta i:hover{
+    border-color: black;
+}
+.landing .show{
+    display: block;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    padding-left: 4px;
+}
+.landing .meta p img{
+    width: 60px;
+    height: auto;
+    background: black;
+    border: 1px solid black;
+    align-self: flex-end;
+    padding: 3px;
+}
+.landing .meta:hover{
+    cursor: pointer;
+    outline: 2px solid black;
+}
+.landing .meta{
+    font-size: 15px;
+}
+.description{
+    padding: 10px 30px;
+    background: transparent;
+}
+.description .intro{
+    display: block;
+}
+.description .intro p::first-letter {
+    font-size: 5em; 
+    font-weight: bold;
+    padding-right: 23px;
+    float: left;
+    margin-right: 5px; 
+    shape-outside: circle(40%);
+    font-family: var(--tertiary-text);
+    background: var(--green);
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+    color: var(--white);
+}
+
+.description div{
+    display: flex;
+}
+.description span{
+    margin-left: 40px;
+}
+.imagecontainer{
+    min-width: 30vw;
+    height: 200px;
+    background-size: contain;
+    background-color: var(--green-7);
+    background-repeat: no-repeat;
+    border: 5px solid var(--brown);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 24px;
+    color: var(--first-yellow);
+}
+.image1{
+    background-image: url('../gallery/IMG_20231209_142925_893.jpg');
+}
+/* .image2{
+    background-image: url('../gallery/IMG_20231214_163831_197.jpg');
+} */
+.image3{
+    background-image: url('../gallery/IMG_20231215_085736_047.jpg');
+}
+.image4{
+    background-image: url('../gallery/FB_IMG_16728953242351.jpg');
+}
+.objectives, .strategies{
+    padding: 10px 30px;
+    background: linear-gradient(180deg, rgb(240, 240, 240) 96%, rgb(0, 0, 0, .7));
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-right: 30px;
+    margin-left: 30px;
+    box-shadow: 3px 3px 5px black inset, -3px 0 5px black inset;
+}
+.objectives li, .strategies li{
+    padding: 10px 0;
+}
+.faqs{
+    background: var(--green-7);
+    color: var(--white);
+    padding: 30px;
+}
+.faqs .cont{
+    max-width: 60%;
+    margin: auto;
+}
+.faqs .cont li{
+    display: flex;
+    justify-content: space-between;
+    list-style: decimal-leading-zero;
+    width: 100%;
+    cursor: pointer;
+    background: rgb(0, 0, 0, .5);
+    border-radius: 10px;
+    padding: 10px 20px;
+    user-select: none;
+}
+.faqs .cont li p{
+    display: flex;
+    position: relative;
+}
+.faqs .cont li span:first-child{
+    align-self: flex-start;
+    user-select: none;
+    gap: 15px;
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+}
+.faqs .cont li:hover{
+    background:rgb(0, 0, 0, .9);
+}
+.faqs .cont li i{
+    align-self: center;
+}
+@media only screen and (max-width: 878px){
+    .template{
+        flex-direction: column;
+        position: initial;
+        max-height: 95vh;
+        width: 99vw;
+        margin: auto;
+    }
+    .landing {
+        margin-top: 0;
+        height: auto;
+        padding: 0;
+        padding-top: 10%;
+    }
+    .navigation{
+        flex: 0;
+        height: fit-content;
+    }
+    .navigation .topics{
+        display: none;
+        flex: 1;   
+    }
+    .follow{
+        margin-top: 0;
+    }
+    .follow .social{
+        display: none;
+    }
+    .view-window .top{
+        width: 100%;
+        margin-top: -20px;
+        height: 20px;
+    }
+    .view-window .top img{
+        top: -50px;
+    }
+    .view-window .top button, .view-window .top a{
+        text-wrap: nowrap;
+        padding: 4px 7px;
+        gap: 10px;
+    }
+    .view-window .top a{
+        text-wrap: wrap;
+    }
+    .container{
+        flex-direction: column;
+        background: none;
+    }
+    .container .floatingpage{
+        padding-right: 0;
+    }
+    .container .floatingpage i{
+        margin-right: 20px;
+        margin-top: 6px;
+        border-radius: 3px;
+    }
+    .container .floatingpage form{
+        max-width: 85%;
+    }
+    .container .floatingpage form label{
+        justify-content: space-around;
+    }
+    .container .floatingpage form label fieldset{
+        max-width: 60%;
+    }
+    .container .fullname .buttons{
+        flex-direction: column;
+    }
+    .container .fullname .buttons button{
+        max-width: 300px;
+        margin: auto;
+    }
+    .container .holder{
+        flex-direction: column-reverse;
+    }
+    .container .vision, .container .mission{
+        width: 95%;
+        margin: auto;
+        align-self: flex-start;
+        height: fit-content;
+    }
+    .container .vision{
+        background: var(--brown);
+    }
+    .container .mission{
+        background: var(--first-yellow);
+    }
+    .container .fullname{
+        height: fit-content;
+        padding: 10px 15px 40% 14px;
+        align-self: flex-start;
+        background-image: url('10399 (1).jpg');
+        background-size: contain 90vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        border: 1px solid black;
+    }
+    .description div{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        margin-left: 0;
+    }
+    .imagecontainer{
+        width: 70vw;
+        align-self: center;
+    }
+    .faqs{
+        padding: 20px;
+    }
+    .faqs .cont{
+        max-width: 90%;
+        padding: 0;
+        margin: initial;
+    }
+}

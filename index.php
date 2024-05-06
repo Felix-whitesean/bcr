@@ -72,7 +72,7 @@
                         Biochar Application
                     </div>
                     <div class="function3Text">
-                    The prepared biochar are then applied as a top layer around plants as demonstrated. Its application has profound impacts on soil health, plant growth, and environmental sustainability.
+                        The prepared biochar are then applied as a top layer around plants as demonstrated. Its application has profound impacts on soil health, plant growth, and environmental sustainability.
                     </div>
                     <div class="function3Image2"></div>
                 </div>
@@ -83,51 +83,32 @@
             <div class="title"></div>
         </div>
         <div class="excerpts">
-            <div class="firstExcerpt">
-                <div class="paragraph">
-                    <div class="slideTitle">
-                        Biochar Climate Resolution Objectives:
-                    </div>
-                    <div class="slides1">
-                        <div class="fprevious"><</div>
-                        <div class="imageSlidesContainer">
-                                <div class="image1"><li>To build biochar industry in Kenya for climate resilience and create more sustainable future for the posterity</li></div>
-                                <div class="image2"><li>To advance agricultural and forestry biomass utilization on carbon sequestration production</li></div>
-                                <div class="image3"><li>To curb CO₂ emissions</li> </div>
+            <div class="scrolling">
+                <div class="imageSlidesContainer">
+                    <div class=".scrolling-item">
+                        <div class="slideTitle">
+                            Biochar Climate Resolution Objectives:
                         </div>
-                        <div class="fnext">></div>   
+                        <li>To build biochar industry in Kenya for climate resilience and create more sustainable future for the posterity</li>
+                        <li>To curb CO₂ emissions</li>
+                        <li>To advance agricultural and forestry biomass utilization on carbon sequestration production</li>
                     </div>
-                    <div class="slideIndicator"></div>
-                </div>
-            </div>
-
-            <div class="secondExcerpt">
-                <div class="secondProfile"></div>
-                <div class="paragraph">
-                    <div class="slideTitle">
-                        Our focus strategies to Net Zero:
-                    </div>
-                    <div class="slides2">
-                        <div class="previous"><</div>
-                        <div class="imageSlidesContainer">
-                            <div class="image1">
-                                Biochar Climate Resolution has committed to an ambitious Net Zero target by 2050. To help realize these goals, 
-                                Biochar Climate is delivering a range of Net Zero solutions that will have an impact on the large-scale change the planet needs.
-                            </div>
-                            <div class="image2">
-                                Biochar Climate Resolution has developed a vision for where we need to be in 15 years to ensure our Net Zero target
-                                for 2050 is achievable. Climate change is one of the biggest threats facing our planet today, so our future must be sustainable.
-                            </div>
-                            <div class="image3">
+                    <div class=".scrolling-item">
+                        <div class="slideTitle">
+                            Our focus strategies to Net Zero:
+                        </div>
+                        <div class="image1 txt">
+                            Biochar Climate Resolution has committed to an ambitious Net Zero target by 2050. To help realize these goals, 
+                            Biochar Climate is delivering a range of Net Zero solutions that will have an impact on the large-scale change the planet needs.
+                        </div>
+                        <div class="image2 txt">
+                            Biochar Climate Resolution has developed a vision for where we need to be in 15 years to ensure our Net Zero target
+                            for 2050 is achievable. Climate change is one of the biggest threats facing our planet today, so our future must be sustainable.
+                        </div>
+                        <div class="image3 txt">
                             Sustainable innovation that produces environmental and economic impacts is essential, and therefore we are creating initiatives and delivering 
                             programs to support businesses and farming to decarbonize, reduce waste, increase organic fertilizer and build resilient, low carbon supply chains.
-                            </div>
-                        </div>                        
-                        <div class="next">></div>   
-                    </div>
-                    <div class="slideIndicator"></div>
-                    <div class="text">
-
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,38 +137,43 @@
     </div>
     <script>
         window.addEventListener("load", hideLoading);
+        slides = document.querySelector('.slides2').querySelectorAll('.txt');
+        console.log(slides);
+
+        let slideIndex = 0;
         function hideLoading(){
             loader = document.querySelector('.loadingBackground');
             body = document.querySelector('.bodycontent');
             loader.style.display = "none";
             body.style.display = "initial";
         }
-        itemcontainer1 = document.querySelector('.slides1');
+        const slider = document.querySelector('.scrolling');
+        // itemcontainer2 = document.querySelector('.slides2');
 
-        document.querySelector('.fnext').addEventListener("click", scrollRight1);
-        document.querySelector('.fprevious').addEventListener("click", scrollLeft1);
+        function showSlide(index) {
+            slider.style.transition= "3s eas-in-out"
+            slider.style.transform = `translateX(-${index * 50}%)`;
+        }
+
+        // Function to go to the previous slide
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+            indicating();
+        }
+
+        // Function to go to the next slide
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
         imageSlidesContainers = document.querySelectorAll('.imageSlidesContainer');
         for(i=0; i<imageSlidesContainers.length; i++){
             imageSlidesContainers[i].addEventListener("wheel",function(event){
                 itemcontainer1.scrollLeft += 0;
                 console.log(itemcontainer1);
             });
-        }
-        //document.querySelector('.imageSlidesContainer').addEventListener("scroll", stopScroll);
-        function scrollRight1(){
-            itemcontainer1.scrollLeft += (itemcontainer1.querySelector('.image1').scrollWidth + 20);
-        }
-        function scrollLeft1(){
-            itemcontainer1.scrollLeft -= (itemcontainer1.querySelector('.image1').scrollWidth + 20);
-        }
-        document.querySelector('.next').addEventListener("click", scrollRight);
-        document.querySelector('.previous').addEventListener("click", scrollLeft);
-        itemcontainer2 = document.querySelector('.slides2');
-        function scrollRight(){
-            itemcontainer2.scrollLeft += (itemcontainer2.querySelector('.image1').scrollWidth + 20);
-        }
-        function scrollLeft(){
-            itemcontainer2.scrollLeft -= (itemcontainer2.querySelector('.image1').scrollWidth + 20);
         }
     </script>
 </body>
