@@ -55,8 +55,44 @@
                 <a href="tel:0712345678"><i class="fa-solid fa-phone-volume"></i>  Call us now!</a>
                 <img width="26px" height="26px"src="../5077.jpg" class="topImage">
             </div>
-
-
+            <div class="container">
+                <div class="usercontent">
+                    <ol>
+                        <?php
+                            $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            $username = 'biocharc_admin_init';
+                            $password = 'Bcr<>23@Ng&F';                                
+                            try {
+                                $pdo = new PDO($dsn, $username, $password);
+                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $sql = "SELECT * FROM members";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($results as $row) {
+                                    ?>
+                                    <li>                    
+                                    <div class="profileimage">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <div class="bio">
+                                            <h3 class="fullname"><?php print_r($row['firstname']." ".$row['lastname']); ?></h3>
+                                            <h5 class="title"><?php print_r($row['title']);?></h5>
+                                        </div>
+                                    </div>
+                                    <p class="profile"><?php print_r($row['userprofile']);?></p>
+                                    <a href="tel:<?php print_r($row['whatsapp']);?>"><?php print_r($row['whatsapp']);?></a>
+                                    <br><br>
+                                    <a href="mailto:<?php print_r($row['email']);?>"><?php print_r($row['email']);?></a>
+                                    </li>
+                                    <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo 'Database error: ' . $e->getMessage();
+                            }
+                        ?>
+                    </ol>
+                </div>
+            </div>
         </section>
         <script src="team.js"></script>
 </body>

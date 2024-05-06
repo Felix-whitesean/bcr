@@ -23,7 +23,7 @@
             <div class="left">
                 <div class="name">
                     <div class="logo">
-                        <img src="../bcrLogo.png" alt="">
+                        <img src="bcrLogo.png" alt="">
                     </div>
                     <div class="acronym">
                         <p>BCR | Menu</p>
