@@ -122,9 +122,13 @@
                 <h3>Members</h3>
                     <ol>
                         <?php
-                            $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
-                            $username = 'biocharc_admin_init';
-                            $password = 'Bcr<>23@Ng&F';
+                            // $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            // $username = 'biocharc_admin_init';
+                            // $password = 'Bcr<>23@Ng&F';
+
+                            $dsn = 'mysql:host=localhost;dbname=biochar';
+                            $username = 'root';
+                            $password = '';
                             
                             try {
                                 $pdo = new PDO($dsn, $username, $password);
@@ -136,6 +140,9 @@
                                 foreach ($results as $row) {
                                     echo "<li>";
                                     print_r($row['firstname']." ".$row['lastname']); // Output each row as an associative array
+                                    ?>
+                                    <input type="hidden" name="id" value="<?php echo($row['memberId']); ?>">
+                                    <?php
                                     echo "</li>";
                                 }
                             } catch (PDOException $e) {

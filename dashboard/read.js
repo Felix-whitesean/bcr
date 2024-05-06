@@ -80,34 +80,32 @@ members = document.querySelector(".members").querySelector(".list").querySelecto
 members.forEach(function(user){
     user.addEventListener('click', function(){
             // Use AJAX to call the PHP function
-            username = user.textContent;
-            var words = username.split(' ');
-            // if(words > 0){
-                var firstname = words[0];
-                var lastname = words.slice(1).join(' ');
-                $.ajax({
-                    url: 'view.php',
-                    type: 'POST',
-                    data: { name1: firstname, name2: lastname},
-                    success: function(response) {
-                        var x = response;
-                        var title  = x.split('%&%')[0];
-                        var email = x.split('%&%')[1];
-                        var about = x.split('%&%')[2];
-                        var whatsapp = x.split('%&%')[3];
-                        var profilecontainer = document.querySelector(".members").querySelector('.container');
-                        profilecontainer.querySelector(".fullname").textContent = username;
-                        profilecontainer.querySelector(".title").textContent = title;
-                        profilecontainer.querySelector(".profile").textContent = about;
-                        profilecontainer.querySelectorAll("a")[0].href = "tel:"+whatsapp;
-                        profilecontainer.querySelectorAll("a")[0].textContent = whatsapp;
-                        profilecontainer.querySelectorAll("a")[1].href = "mailto:"+email;
-                        profilecontainer.querySelectorAll("a")[1].textContent = email;
-                    },
-                    error: function() {
-                        alert('Error calling PHP function!');
-                    }
-                });
-            // }
+        var hiddeninput = user.querySelector("input");
+        // var words = username.split(' ');
+        var username = user.textContent;
+        var memberId = hiddeninput.value;
+        $.ajax({
+            url: 'view.php',
+            type: 'POST',
+            data: { memberIdNo: memberId},
+            success: function(response) {
+                var x = response;
+                var title  = x.split('%&%')[0];
+                var email = x.split('%&%')[1];
+                var about = x.split('%&%')[2];
+                var whatsapp = x.split('%&%')[3];
+                var profilecontainer = document.querySelector(".members").querySelector('.container');
+                profilecontainer.querySelector(".fullname").textContent = username;
+                profilecontainer.querySelector(".title").textContent = title;
+                profilecontainer.querySelector(".profile").textContent = about;
+                profilecontainer.querySelectorAll("a")[0].href = "tel:"+whatsapp;
+                profilecontainer.querySelectorAll("a")[0].textContent = whatsapp;
+                profilecontainer.querySelectorAll("a")[1].href = "mailto:"+email;
+                profilecontainer.querySelectorAll("a")[1].textContent = email;
+            },
+            error: function() {
+                alert('Error calling PHP function!');
+            }
+        });
     })
 })

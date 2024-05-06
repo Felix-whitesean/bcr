@@ -14,12 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         else{
             $subscription = 1;
         }
-        echo($name);
-        echo($email);
-        echo($country);
-        echo($telNo);
-        echo($rules);
-        echo($subscription);
+        echo "User request submitted successfull";
     }
     else{
         echo "Required data missing";
