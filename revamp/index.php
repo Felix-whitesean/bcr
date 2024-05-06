@@ -203,6 +203,6 @@
             </section> 
         </section>
     </div>
-    <script src="index.js"></script>
+    <script src="body.js"></script>
 </body>
 </html>
