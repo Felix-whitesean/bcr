@@ -22,7 +22,7 @@ for(i = 0; i < list.length; i++){
                 document.querySelector("."+list[i].textContent.toLowerCase().replace(" ", "-")).style.width = "0";
                 document.querySelector(".landingprofile").style.display = "block";
                 arrowLeft.style.display = "none";
-                return;
+                // return;
             }
         });
         for(i = 0; i<list.length; i++){
