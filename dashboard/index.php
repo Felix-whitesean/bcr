@@ -168,6 +168,6 @@
         </div>
         
     </div>
-    <script src="index.js"></script>
+    <script src="read.js"></script>
 </body>
 </html>
