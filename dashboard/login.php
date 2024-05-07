@@ -3,6 +3,7 @@
     $pass = $_POST['adPass'];
     $uname = $_POST['adName'];
     $con = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
+    // $con = mysqli_connect('localhost','root','','biochar');
     // Check connection
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -17,7 +18,7 @@
     }
     if($userName == $uname && $paswd == $pass){
         echo "1";
-        $_SESSION['uname'] = $row['adminName'];
+        $_SESSION['uname'] = $userName;
     }
     else{
         echo("Wrong name or password, please try again");
