@@ -1,6 +1,7 @@
 <?php
     session_start();
     $_SESSION['last_activity'] = time();
+    $name = $_SESSION['uname']
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,7 @@
     <div class="popup"></div>
 </div>
     <?php
-    if(!$_SESSION['uname']){
+    if(!$name){
         ?>
         <div class="login">
             <form id="login" method="post">
