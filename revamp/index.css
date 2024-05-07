@@ -641,6 +641,29 @@ body {
 .faqs .cont li i{
     align-self: center;
 }
+.bars{
+    padding: 10px 17px;
+    padding-bottom: 10px;
+    display: none;
+    background: rgb(0, 0, 0, .5);
+    left: 13px;
+    top: 15px; 
+    width: fit-content;
+    position: fixed;
+    z-index: 1111;
+    border-radius: 5px;
+    color: white;
+}
+
+.bars i{
+    color: var(--white);
+    font-size: 16px;
+}
+.bars:hover{
+    cursor: pointer;
+    background: var(--brown);
+    border: 1px solid;
+}
 @media only screen and (max-width: 878px){
     .template{
         flex-direction: column;
@@ -648,6 +671,7 @@ body {
         max-height: 95vh;
         width: 99vw;
         margin: auto;
+        display: block;
     }
     .landing {
         margin-top: 0;
@@ -659,8 +683,29 @@ body {
         flex: 0;
         height: fit-content;
     }
+    .navigation .name{
+        margin-left: 10%;
+    }
     .navigation .topics{
         display: none;
+        flex: 1;   
+    }
+    .navDisplay{
+        width: auto;
+        position: absolute;
+        display: block;
+        top: 8px;
+        z-index: 111;
+        height: 97vw;
+    }
+    .navDisplay .bars{
+        position: relative;
+        float: right;
+        left: 0;
+        top: 0;
+    }
+    .navDisplay .topics{
+        display: block;
         flex: 1;   
     }
     .follow{
@@ -755,5 +800,8 @@ body {
         max-width: 90%;
         padding: 0;
         margin: initial;
+    }
+    .bars{
+        display: flex
     }
 }

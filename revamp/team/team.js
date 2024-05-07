@@ -6,9 +6,7 @@ function hideLoading(){
     body.style.display = "block";
 }
 popupwindow = document.querySelector('.popup');
-setTimeout(function() {
-    pop("This website has been updated recently, please consider commenting about it", 10000);
-}, 10000);
+
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
 
@@ -36,4 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check viewport on page load and scroll
     checkViewport();
     window.addEventListener('scroll', checkViewport);
+});
+window.addEventListener('load', function(){
+    navLinks = document.querySelector('nav').querySelectorAll('a');
+    var cur = window.location.href;
+    
+    // first = document.querySelector('.first');
+    for(i=0; i<navLinks.length; i++){
+        if(cur == navLinks[i].href){
+            navLinks[i].style.borderTop = "1px solid";
+            navLinks[i].style.borderBottom = "1px solid";
+            navLinks[i].style.color = "var(--white)";
+        }
+    }
 });

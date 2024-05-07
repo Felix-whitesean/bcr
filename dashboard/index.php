@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $_SESSION['last_activity'] = time();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +13,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Miltonian&family=Sevillana&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="ff.png">
+    <link rel="icon" href="../ff.png">
     <meta name="theme-color" content="rgb(22, 110, 22)">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<div class="container1">
+    <div class="popup"></div>
+</div>
+    <?php
+    if(!$_SESSION['uname']){
+        ?>
+        <div class="login">
+            <form id="login" method="post">
+                <h5>This page is protected with password, please login</h5>
+                <label><p><i class="fa-regular fa-user"></i> Username:</p><fieldset><input type="text" name="adName" required></fieldset></label>
+                <br>
+                <label><p><i class="fa-solid fa-lock"></i> Password:</p><fieldset><input type="password" name="adPass" required><i class="fa-regular fa-eye"></i></fieldset></label>
+                <button type="button" onclick="formsubmission('login','login.php', 'Successful...')">Sumbit</button>
+                <br>
+                <a href="">Forgot password</a>
+            </form>
+        </div>
+        <?php
+    }else{
+        $timeout = 60; // seconds
+        $current_time = time();
+        $last_activity_time = $_SESSION['last_activity'];
+    
+        if(($current_time - $last_activity_time) > $timeout) {
+            session_unset();
+            session_destroy();
+            header('Location: https://admin.biocharclimateresolution.org');
+        }
+        ?>
     <div class="loadingBackground">
         <div class="loading"></div>
         <div class="constant"><img src="../ff.png" alt="LOADING"></div>
@@ -23,7 +56,7 @@
             <div class="left">
                 <div class="name">
                     <div class="logo">
-                        <img src="bcrLogo.png" alt="">
+                        <img src="../bcrLogo.png" alt="">
                     </div>
                     <div class="acronym">
                         <p>BCR | Menu</p>
@@ -52,7 +85,10 @@
                 <div class="landingprofilecontainer">
                     <div class="accounttemplate">
                         <div class="account">
-                            <div class="profileimage"><i class="fa-solid fa-circle-user"></i></div>
+                            <div class="profileimage">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <?php echo($_SESSION['uname']); ?>
+                            </div>
                             <div class="settings">
                                 <li id="changepass">Change password</li>
                                 <li id="logout">Log out</li>
@@ -171,6 +207,10 @@
         </div>
         
     </div>
-    <script src="read.js"></script>
+    
+<?php
+}
+?>
+<script src="read.js"></script>
 </body>
 </html>

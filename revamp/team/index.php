@@ -8,21 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Miltonian&family=Sevillana&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../../../bcr/ff.png">
+    <link rel="icon" href="../ff.png">
     <meta name="theme-color" content="rgb(22, 110, 22)">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="loadingBackground">
         <div class="loading"></div>
-        <div class="constant"><img src="../../../bcr/ff.png" alt="LOADING"></div>
+        <div class="constant"><img src="../ff.png" alt="LOADING"></div>
     </div>
     <div class="template">
         <section class="navigation">
             <div class="left">
                 <div class="name">
                     <div class="logo">
-                        <img src="../../../bcr/ff.png" alt="">
+                        <img src="../ff.png" alt="">
                     </div>
                     <div class="acronym">
                         BCR
@@ -30,8 +30,8 @@
                 </div>
                 <hr>
                 <nav class="topics">
-                    <a href="bcr/dashboard/">Home</a>
-                    <a href="#team">Team <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="http://localhost/bcr/revamp/">Home</a>
+                    <a href="http://localhost/bcr/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#blog">Blogs section <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#about">About us <i class="fa-solid fa-angle-right"></i></a>
                 </nav>
@@ -59,9 +59,13 @@
                 <div class="usercontent">
                     <ol>
                         <?php
-                            $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
-                            $username = 'biocharc_admin_init';
-                            $password = 'Bcr<>23@Ng&F';                                
+                            // $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            // $username = 'biocharc_admin_init';
+                            // $password = 'Bcr<>23@Ng&F'; 
+                            
+                            $dsn = 'mysql:host=localhost;dbname=biochar';
+                            $username = 'root';
+                            $password = ''; 
                             try {
                                 $pdo = new PDO($dsn, $username, $password);
                                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -93,6 +97,9 @@
                     </ol>
                 </div>
             </div>
+            <?php
+                include("../footer.html");
+            ?>
         </section>
         <script src="team.js"></script>
 </body>

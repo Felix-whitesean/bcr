@@ -5,6 +5,7 @@ function hideLoading(){
     loader.style.display = "none";
     body.style.display = "flex";    
 }
+popupwindow = document.querySelector(".popup");
 emailButtons = document.querySelector('.email').querySelector('.head').querySelectorAll('button');
 list = document.querySelector(".topics").querySelectorAll("li");
 for(i = 0; i < list.length; i++){
@@ -108,4 +109,82 @@ members.forEach(function(user){
             }
         });
     })
-})
+});
+function formsubmission(formid, actionfile, successMessage){
+    var form = document.getElementById(formid);
+    var inputs = form.querySelectorAll('input')
+    inputs.forEach(function (input){
+        if(input.hasAttribute('required')){
+            characters = input.value;
+            var textArea = form.querySelector('textarea'); // Replace 'myTextArea' with the actual ID of your textarea
+
+             // Use trim() to remove leading/trailing whitespace
+            if(textArea){
+                var textAreaValue = textArea.value.trim();
+            }
+            if (textAreaValue == "") {
+                characters = "";
+                pop("Please input value for text box", 3000);
+                    return;
+            }
+            if(input.type == "checkbox"){
+                if(!input.checked){
+                    characters = "";
+                    pop("Please check the required checkboxes", 3000);
+                    return;
+                }
+            }
+            if(characters==""){
+                pop("Please enter all the required details", 3000);
+                return;
+            }
+            else{
+                var formData = new FormData(form);
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', actionfile, true);
+                xhr.responseType = 'text';
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            console.log(xhr.responseText);
+                            if(xhr.responseText == 1){
+                                pop(successMessage, 3000);
+                                form.reset();
+                                location.reload();
+                            }
+                            else{
+                                pop(xhr.responseText, 3000)
+                            }
+                        } else {
+                            // minimize();
+                            pop("Error in submiting comments!, enter the required fields and try again", 6000);
+                            // console.error('Failed to update like count');
+                        }
+                    }
+                };
+                xhr.send(formData);
+            }
+        }
+    })
+}
+function pop(txt, timeout){
+    popupwindow.textContent = txt;
+    popupwindow.style.display = "initial";
+    setTimeout(function () {
+        popupwindow.style.display = "none";
+    }, timeout);
+}
+function logout(){
+    $.ajax({
+        url: 'logout.php',
+        type: 'POST',
+        data: { status: "0"},
+        success: function(response) {
+
+        },
+        error: function() {
+            alert('Error calling PHP function!');
+        }
+    });
+}

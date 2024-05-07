@@ -20,6 +20,9 @@
     <div class="template">
         <section class="navigation">
             <div class="left">
+                <div class="bars">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
                 <div class="name">
                     <div class="logo">
                         <img src="../ff.png" alt="">
@@ -30,8 +33,8 @@
                 </div>
                 <hr>
                 <nav class="topics">
-                    <a href="index.php">Home</a>
-                    <a href="#team">Team <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="http://localhost/bcr/revamp/">Home</a>
+                    <a href="http://localhost/bcr/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#blog">Blogs section <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#about">About us <i class="fa-solid fa-angle-right"></i></a>
                 </nav>

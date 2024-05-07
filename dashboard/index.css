@@ -21,6 +21,96 @@ body {
     padding: 0;
     font-family: var(--inter-text);
 }
+.container1{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+.popup{
+    position: absolute;
+    top: 7px;
+    width: auto;
+    background: black;
+    color: var(--white);
+    box-shadow: 2px 2px 4px var(--brown) inset, -2px -2px 4px var(--brown) inset;
+    padding: 10px 13px;
+    z-index: 1111;
+    max-width: 85vw;
+    margin: auto;
+    text-wrap: wrap;
+    align-self: center;
+    display: none;
+}
+.login{
+    width: 98vw;
+    height: 100vh;
+    background: var(--green);
+    color: transparent;
+}
+.login form{
+    background: var(--white);
+    margin: 50px auto;
+    color: var(--brown);
+    width: fit-content;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width: 40%;
+}
+.login form h5{
+    color: var(--green);
+}
+.login form p{
+    flex: 0 0 40%;
+    margin: 0;
+    align-self: center;
+    font-family: var(--miltonian-text);
+}
+.login form label{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.login form label fieldset{
+    padding: 0;
+    max-width: 70%;
+    margin-top: 10px;
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid var(--brown);
+    align-self: center;
+    display: flex;
+}
+.login form label fieldset input{
+    margin: 0;
+    outline: transparent;
+    border: none;
+    line-height: 30px;
+    width: 95%;
+    background: transparent;
+}
+.login form button{
+    padding: 7px 15px;
+    border-radius:4px;
+    border: 1px solid;
+    margin: 20px auto;
+    margin-left: 30%;
+}
+.login form button:hover{
+    color: white;
+    background: var(--green);
+    outline: 1px solid var(--brown);
+    cursor: pointer;
+}
+.login form a{
+    text-align: center;
+    color: black;
+}
+.login form a:visited{
+    color: black;
+}
+.login form a:hover{
+    color: var(--green);
+}
 .loadingBackground{
     width: 100%;
     height: 10vh;
@@ -156,7 +246,7 @@ body {
     margin-left: 15px;
 }
 .right{
-    background-image: url('revamp/10399 (1).jpg');
+    background-image: url('../revamp/10399\ \(1\).jpg');
     background-color: rgb(240, 240, 240, .6);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -222,7 +312,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px
+    gap: 10px
 }
 .accounttemplate .account{
     display: flex;
@@ -232,11 +322,19 @@ body {
     border-radius: 10px;
     align-self: flex-start;
 }
+.accounttemplate .account .profileimage{
+    display: flex;
+    flex-direction: column;
+    color: var(--green);
+    padding: 10px;
+    gap: 30px;
+    text-align: center;
+}
 .accounttemplate .account .profileimage i{
     font-size: 100px;
     line-height: 100px;
     border-radius: 50%;
-    align-self: flex-end;
+    align-self: center;
     background: rgb(240, 240, 240, .8);
     color: var(--green);
     padding: 7px;

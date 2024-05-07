@@ -6,9 +6,6 @@ function hideLoading(){
     body.style.display = "block";
 }
 popupwindow = document.querySelector('.popup');
-setTimeout(function() {
-    pop("This website has been updated recently, please consider commenting about it", 10000);
-}, 10000);
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
 
@@ -149,3 +146,31 @@ function pop(txt, timeout){
         popupwindow.style.display = "none";
     }, timeout);
 }
+window.addEventListener('load', function(){
+    // head = document.querySelector('.head');
+    // head.addEventListener('click', function(){
+    //     window.location = "index.php"
+    // })
+    // li = document.querySelector('nav').querySelectorAll('li');
+    navLinks = document.querySelector('nav').querySelectorAll('a');
+    var cur = window.location.href;
+    
+    // first = document.querySelector('.first');
+    for(i=0; i<navLinks.length; i++){
+        // console.log(cur);
+        // console.log(navLinks[i].href);
+        if(cur == navLinks[i].href){
+            console.log(navLinks[i].href);
+            navLinks[i].style.borderTop = "1px solid";
+            navLinks[i].style.borderBottom = "1px solid";
+            navLinks[i].style.color = "var(--white)";
+        }
+    }
+    hambugher = document.querySelector('.bars');
+    nav = document.querySelector('.navigation');
+    hambugher.addEventListener("click", toggle);
+    function toggle(){
+        hambugher.querySelector('i').classList.toggle('fa-circle-xmark');
+        nav.classList.toggle('navDisplay');
+    }
+})
