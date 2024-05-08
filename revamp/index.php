@@ -46,7 +46,6 @@
                     <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
                     <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
                     <a href="https://www.linkedin.com/in/biochar-climate-resolution-8523522a1/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://pinterest.com"><i class="fa-brands fa-square-pinterest" target="_blank"></i></a>
                 </div>
             </div>
         </section>
