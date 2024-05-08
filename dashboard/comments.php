@@ -2,7 +2,8 @@
     $comments = $_POST['message'];
     $name = $_POST['name'];
     if($comments !== ""){
-        $conn = mysqli_connect('localhost','root','','biochar'); 
+        // $conn = mysqli_connect('localhost','root','','biochar');
+        $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
         // Check connection
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
