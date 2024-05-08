@@ -30,7 +30,7 @@ if ($result === false) {
             echo("Wrong name or password, please try again");
         }
     } else {
-        echo "No results found for admin name: " . $uname;
+        echo "Invalid login details";
     }
 }
 $conn->close();
