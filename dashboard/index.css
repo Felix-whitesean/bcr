@@ -151,6 +151,7 @@ body {
     position: fixed;
     overflow: hidden;
     background: var(--white);
+    color: black;
 }
 .loading {
     top: 250px;
