@@ -315,15 +315,24 @@ li .bio h5{
     .container{
         width: 100%;
     }
-    .navigation .topics{
-        display: none;
-        flex: 1;   
-    }
     .container li{
         max-width: 99%;
         width: fit-content;
     }
     .view-window .top{
         width: 100vw;
+    }
+    .follow{
+        margin-top: 0;
+    }
+    .follow .social{
+        display: none;
+    }
+    .navigation .topics{
+        display: none;
+        flex: 1;   
+    }
+    .navigation  .follow{
+        display: flex;
     }
 }

@@ -59,13 +59,13 @@
                 <div class="usercontent">
                     <ol>
                         <?php
-                            // $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
-                            // $username = 'biocharc_admin_init';
-                            // $password = 'Bcr<>23@Ng&F'; 
+                            $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            $username = 'biocharc_admin_init';
+                            $password = 'Bcr<>23@Ng&F'; 
                             
-                            $dsn = 'mysql:host=localhost;dbname=biochar';
-                            $username = 'root';
-                            $password = ''; 
+                            // $dsn = 'mysql:host=localhost;dbname=biochar';
+                            // $username = 'root';
+                            // $password = ''; 
                             try {
                                 $pdo = new PDO($dsn, $username, $password);
                                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
