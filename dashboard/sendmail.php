@@ -1,11 +1,11 @@
 <?php
 
-    if($_POST['from'] == "" || $_POST['receiver'] == "" || $_POST['content'] == "" || $_POST['subject'] == ""){
+    if($_POST['from'] == "" || $_POST['receiver'] == "" || $_POST['content'] == "" || $_POST['subj'] == ""){
         echo"Please enter all the required values";
     }
     else{
         $to = $_POST['receiver'];
-        $subject = $_POST['subject'];
+        $subject = $_POST['subj'];
         $message = $_POST['content'];
         $from = $_POST['from'];
     }
