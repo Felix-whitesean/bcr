@@ -1,7 +1,8 @@
 <?php
 
     if($_POST['from'] == "" || $_POST['receiver'] == "" || $_POST['content'] == "" || $_POST['subj'] == ""){
-        echo"Please enter all the required values";
+        // echo"Please enter all the required values";
+        echo $_POST['from']." ".$_POST['receiver']." ".$_POST['content']." ".$_POST['subj'];
     }
     else{
         $to = $_POST['receiver'];
