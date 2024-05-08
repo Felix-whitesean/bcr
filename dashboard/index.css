@@ -481,6 +481,7 @@ body {
     margin: 20px;
 }
 .email{
+    display: flex;
     display: none;
     border: 1px solid black;
     justify-content: space-between;
@@ -661,4 +662,71 @@ body {
 .members .container a:hover{
     cursor: pointer;
     padding-left: 20px;
+}
+@media only screen and (max-width: 876px){
+    .navigation{
+        transition: 1s;
+        transform: translateX(-100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        flex: 0 0 100%;
+        z-index: 11;
+    }
+    .menu{
+        transition: 1s;
+        transform: translateX(0);
+    }
+    .navigation i{
+        position: absolute;
+        z-index: 11;
+        display: flex;
+        top: 40%;
+        background: var(--green);
+        padding: 10px 12px;
+        color: white;
+        left: 10px;
+        transform: translateX(210px);
+        border-radius: 50%;
+        user-select: none;
+        border: 1px solid var(--white);
+        box-shadow: .1px .1px 2px var(--white) inset, -.1px -.1px 2px var(--white) inset;
+    }
+    .navigation i:hover{
+        cursor: pointer;
+        outline: 2px solid black;
+    }
+    .right{
+        transition: 1s;
+        flex: 1;
+        width: 98vw;
+    }
+    .landing, .landingprofile{
+        width: 95vw;
+    }
+    .landing .floatingheader{
+        width: 95vw;
+    }.landing .floatingheader h4{
+        width: 100%;
+    }
+    .contactdeveloper form{
+        margin-left: 0;
+    }
+    .contactdeveloper form textarea{
+        max-width: 75%;
+        width: auto;
+        min-width: 200px;
+    }
+    .email{
+        display: block;
+        display: none;
+        justify-content: space-evenly;
+    }
+    .email .list{
+        margin-top: 50px;
+    }
+    .container{
+        width: 98vw;
+        height: auto;
+    }
 }

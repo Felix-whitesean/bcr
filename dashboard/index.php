@@ -78,6 +78,9 @@
                     <li>Payments received</li>
                 </nav>
             </div>
+            <div class="actionbtn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
         </section>
         <div class="right">
             <section class="landing">

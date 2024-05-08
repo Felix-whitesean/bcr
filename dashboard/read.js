@@ -38,7 +38,7 @@ for(i = 0; i < list.length; i++){
         if(toDisplay.className == "email"){
             emailButtons[2].classList.add("clicked");
         }
-        toDisplay.style.display = "flex";
+        toDisplay.style.display = "initial";
         setTimeout(function() {
             toDisplay.style.width = "100%";
         }, 1);
@@ -219,3 +219,15 @@ function switchinput(togglebtn){
     }
 
 }
+actionBtn = document.querySelector(".actionbtn").querySelector("i");
+actionBtn.addEventListener("click", function(){
+    if(actionBtn.classList[1] == "fa-chevron-right"){
+        actionBtn.classList.remove('fa-chevron-right');
+        actionBtn.classList.add('fa-chevron-left');
+    }
+    else{
+        actionBtn.classList.remove('fa-chevron-left');
+        actionBtn.classList.add('fa-chevron-right');
+    }
+    actionBtn.parentElement.parentElement.classList.toggle("menu");
+});
