@@ -159,13 +159,13 @@
                         <button>Compose</button>
                     </div>
                     <div class="compose">
-                        <form method="POST">
+                        <form id="emailform">
                             <h3>Fill in the following details to send the email</h3>
                             <label>From: <fieldset><input type="email" id="selectedmail" name="from" placeholder ="Please select email in the Left" required disabled></fieldset></label>
                             <label>To: <fieldset><input type="email" name="receiver" required></fieldset></label>
                             <label>Subject: <fieldset><input type="text" name="subj"></fieldset></label>
                             <label>Content: <textarea name="content" required></textarea></label>
-                            <button type="button">Send</button>
+                            <button type="button" onclick="formsubmission('emailform', 'sendmail.php', 'Email sent successfull...')">Send</button>
                         </form>
                     </div>
                 </div>

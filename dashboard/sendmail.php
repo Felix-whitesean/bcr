@@ -20,4 +20,4 @@
 
     $send = mail($to, $subject, $message, $headers);
 
-    echo($send ? "Mail is send successfully" : "There was an error" );
+    echo($send ? "1" : "There was an error in sending email" );
