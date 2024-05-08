@@ -33,8 +33,8 @@
                 </div>
                 <hr>
                 <nav class="topics">
-                    <a href="http://localhost/bcr/revamp/">Home</a>
-                    <a href="http://localhost/bcr/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="https://biocharclimateresolution.org/revamp/">Home</a>
+                    <a href="https://biocharclimateresolution.org/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#blog">Blogs section <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#about">About us <i class="fa-solid fa-angle-right"></i></a>
                 </nav>
