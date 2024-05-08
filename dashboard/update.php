@@ -18,7 +18,7 @@
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 exit();
             }
-            $sql = "UPDATE admindetails1 set adminPassword='$newpass' where adminName = '$uname'";
+            $sql = "UPDATE admindetails set adminPassword='$newpass' where adminName = '$uname'";
             if($conn->query($sql)){
                 echo"1";
             }
