@@ -1,29 +1,22 @@
-<html>
-    <body style="background: rgb(22, 100, 22);color: red;">
-        <?php
-        $id = $_GET['id'];
+<?php
+    session_start();
+    $name = $_POST['name'];
+    // $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
+    $conn = mysqli_connect('localhost','root','','biochar'); 
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+    }
+    $sql = "delete from admindetails where adminName='$name'";
+    if (mysqli_query($conn, $sql)) {
+        session_unset();
+        session_destroy();
+        echo "1";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
-        $con = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
- 
-        // Check connection
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
-        }
-        $sql = "delete from members where memberId=$id";
-    
+    mysqli_close($conn);
 
-        if (mysqli_query($con, $sql)) {
-        echo "Record deleted successfully";
-        ?>
-        <meta http-equiv="refresh" content="2;url=https://admin.biocharclimateresolution.org/">
-        <?php
-        } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        }
-
-        mysqli_close($con);
-
-        ?>
-    </body>
-</html>
+?>

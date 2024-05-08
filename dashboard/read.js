@@ -82,7 +82,6 @@ members.forEach(function(user){
     user.addEventListener('click', function(){
             // Use AJAX to call the PHP function
         var hiddeninput = user.querySelector("input");
-        // var words = username.split(' ');
         var username = user.textContent;
         var memberId = hiddeninput.value;
         $.ajax({
@@ -125,7 +124,7 @@ function formsubmission(formid, actionfile, successMessage){
             if (textAreaValue == "") {
                 characters = "";
                 pop("Please input value for text box", 3000);
-                    return;
+                return;
             }
             if(input.type == "checkbox"){
                 if(!input.checked){
@@ -136,36 +135,41 @@ function formsubmission(formid, actionfile, successMessage){
             }
             if(characters==""){
                 pop("Please enter all the required details", 3000);
+                input.parentElement.style.borderColor = "red";
+                input.focus();
                 return;
             }
-            else{
-                var formData = new FormData(form);
-
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', actionfile, true);
-                xhr.responseType = 'text';
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            console.log(xhr.responseText);
-                            if(xhr.responseText == 1){
-                                pop(successMessage, 3000);
-                                form.reset();
-                                location.reload();
-                            }
-                            else{
-                                pop(xhr.responseText, 3000)
-                            }
-                        } else {
-                            // minimize();
-                            pop("Error in submiting comments!, enter the required fields and try again", 6000);
-                            // console.error('Failed to update like count');
-                        }
-                    }
-                };
-                xhr.send(formData);
-            }
         }
+            input.parentElement.style.borderColor = "initial";
+            var formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', actionfile, true);
+            xhr.responseType = 'text';
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        if(xhr.responseText == 1){
+                            pop(successMessage, 3000);
+                            form.reset();
+                            setTimeout(function() {
+                                location.reload();
+                            }, 1000);
+                        }
+                        else{
+                            pop(xhr.responseText, 3000);
+                            if(formid == "commentsform"){
+                                form.reset();
+                            }
+                        }
+                    } else {
+                        // minimize();
+                        location.reload();
+                        pop("Error in submiting comments! Enter the required fields and try again", 6000);
+                    }
+                }
+            }
+            xhr.send(formData);
     })
 }
 function pop(txt, timeout){
@@ -175,16 +179,43 @@ function pop(txt, timeout){
         popupwindow.style.display = "none";
     }, timeout);
 }
-function logout(){
-    $.ajax({
-        url: 'logout.php',
-        type: 'POST',
-        data: { status: "0"},
-        success: function(response) {
+function minimize(){
+    setTimeout(function() {
+        location.reload();
+    }, 1000);
+    pop("process cancelled", 3000);
+}
+forms = document.querySelectorAll('form');
 
-        },
-        error: function() {
-            alert('Error calling PHP function!');
-        }
-    });
+forms.forEach(function (form){
+    inputs = form.querySelectorAll('input[type="password"]');
+    inputs.forEach( function(input){
+            input.parentElement.querySelector('i').addEventListener("click", toggleinput);
+    })
+})
+function toggleinput(togglebtn){
+    // console.log(togglebtn.target.classList[1]);
+    if (togglebtn.target.classList[1] == 'fa-eye'){
+        togglebtn.target.classList.remove('fa-eye');
+        togglebtn.target.classList.add('fa-eye-slash');
+        togglebtn.target.parentElement.querySelector('input').type = "text";
+    }
+    else{
+        togglebtn.target.classList.remove('fa-eye-slash');
+        togglebtn.target.classList.add('fa-eye');
+        togglebtn.target.parentElement.querySelector('input').type = "password";
+    }
+}
+function switchinput(togglebtn){
+    if (togglebtn.classList[1] == 'fa-eye'){
+        togglebtn.classList.remove('fa-eye');
+        togglebtn.classList.add('fa-eye-slash');
+        togglebtn.parentElement.querySelector('input').type = "text";
+    }
+    else{
+        togglebtn.classList.remove('fa-eye-slash');
+        togglebtn.classList.add('fa-eye');
+        togglebtn.parentElement.querySelector('input').type = "password";
+    }
+
 }

@@ -30,8 +30,8 @@
                 <h5>This page is protected with password, please login</h5>
                 <label><p><i class="fa-regular fa-user"></i> Username:</p><fieldset><input type="text" name="adName" required></fieldset></label>
                 <br>
-                <label><p><i class="fa-solid fa-lock"></i> Password:</p><fieldset><input type="password" name="adPass" required><i class="fa-regular fa-eye"></i></fieldset></label>
-                <button type="button" onclick="formsubmission('login','login.php', 'Successful...')">Sumbit</button>
+                <label><p><i class="fa-solid fa-lock"></i> Password:</p><fieldset><input type="password" name="adPass" required><i onclick="switchinput(this)" class="fa-regular fa-eye"></i></fieldset></label>
+                <button type="button" onclick="formsubmission('login','login.php', 'Sign in successful...')">Sumbit</button>
                 <br>
                 <a href="">Forgot password</a>
             </form>
@@ -45,7 +45,11 @@
         if(($current_time - $last_activity_time) > $timeout) {
             session_unset();
             session_destroy();
-            header('Location: https://admin.biocharclimateresolution.org');
+            ?>
+            <script>
+                location.reload();
+            </script>
+            <?php
         }
         ?>
     <div class="loadingBackground">
@@ -97,34 +101,43 @@
                             </div>
                         </div>
                         <div class="actionwindow">
-                            <form id="changepassform">
-                                <input type="hidden" value="<?php echo($id); ?>">
-                                <label>New password: <fieldset><input type="password" name="newpass"></fieldset></label>
-                                <label>Confirm new password: <fieldset><input type="password" name="confirmnewpass"></fieldset></label>
-                                <button type="button">Change</button>
-                            </form>
-                            <form id="logoutform">
-                                <input type="hidden" value="<?php echo($id); ?>">
-                                <h5>Are you sure your want to logout</h5>
-                                <button type="button" id="confirmlogout"> Yes</button>
+                            <div id="changepassword">
+                                <form id="changepassform">
+                                    <input type="hidden" name="name" value="<?php echo($name); ?>">
+                                    <label>New password: <fieldset><input type="password" name="newpass" required><i class="fa-regular fa-eye"></i></fieldset></label>
+                                    <label>Confirm new password: <fieldset><input type="password" name="confirmnewpass" required><i class="fa-regular fa-eye"></i></fieldset></label>
+                                    <button type="button" onclick="formsubmission('changepassform', 'update.php', 'Password updated successsfully...')">Change</button>
+                                </form>
+                            </div>
+                            <!-- <div id="logoutform"> -->
+                                <form id="logoutform">
+                                    <h5>Are you sure your want to logout</h5>
+                                    <input type="hidden" name="name" value="<?php echo($name); ?>" required>
+                                    <button type="button" id="cancellogout" onclick="minimize()"><i class="fa-solid fa-ban"></i> No</button>
+                                    <br>
+                                    <button type="button" id="confirmlogout" onclick="formsubmission('logoutform', 'logout.php', 'Logging out...')"><i class="fa-solid fa-triangle-exclamation"></i> Yes</button>
+                                </form>
                                 <br>
-                                <button type="button" id="cancellogout"> No</button>
-                            </form>
-                            <form id="deleteform">
-                                <input type="hidden" value="<?php echo($id); ?>">
-                                <h5>Are you sure your want to delete account?</h5>
-                                <button type="button" id="confirmDelete"> Yes</button>
+                            <!-- </div> -->
+                            <!-- <div id="deleteform"> -->
+                                <form id="deleteform">
+                                    <h5>Are you sure your want to delete account?</h5>
+                                    <input type="hidden" name="name" value="<?php echo($name); ?>" required>
+                                    <button type="button" id="cancelDelete" onclick="minimize()"><i class="fa-solid fa-ban"></i> No</button>
+                                    <br>
+                                    <button type="button" id="confirmDelete" onclick="formsubmission('deleteform', 'delete.php', 'Account deleted successsfully... Redirecting...')"><i class="fa-solid fa-triangle-exclamation"></i> Yes</button>
+                                </form>
                                 <br>
-                                <button type="button" id="cancelDelete"> No</button>
-                            </form>
+                            <!-- </div> -->
                         </div>
                     </div>
                     <hr>
                     <div class="contactdeveloper">
                         <h3>Contact admin</h3>
-                        <form>
+                        <form id="commentsform">
+                            <input type="hidden" name="name" value="<?php echo($name); ?>" required>
                             <textarea name="message" placeholder="Leave a note for the admin here" required></textarea>
-                            <button type="button">Send</button>
+                            <button type="button" onclick="formsubmission('commentsform', 'comments.php', 'Comments posted successfull...')">Send</button>
                         </form>
                     </div>
                 </div>
