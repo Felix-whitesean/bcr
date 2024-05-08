@@ -20,6 +20,8 @@
             }
             $sql = "UPDATE admindetails set adminPassword='$newpass' where adminName = '$uname'";
             if($conn->query($sql)){
+                session_unset();
+                session_destroy();
                 echo"1";
             }
             else{
