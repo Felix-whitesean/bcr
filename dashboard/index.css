@@ -601,6 +601,7 @@ body {
 }
 .members .list{
     height: auto;
+    position: fixed;
 }
 .members .list li{
     color: white;
