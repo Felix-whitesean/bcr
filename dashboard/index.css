@@ -625,7 +625,7 @@ body {
 .members .container .profileimage{
     display: flex;
     background: rgb(0, 0, 0, .6);
-    width: 100%;
+    width: 98%;
 }
 .members .container .profileimage .bio{
     display: block;
@@ -722,7 +722,7 @@ body {
         display: none;
         justify-content: space-evenly;
     }
-    .email .list{
+    .members .list, .email .list{
         margin-top: 50px;
     }
     .container{
