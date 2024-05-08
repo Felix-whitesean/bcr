@@ -55,7 +55,7 @@
                 <div class="popup"></div>
                 <a href="https://wa.me/+256760493770" target="_blank"><button><i class="fa-brands fa-whatsapp"></i> Chat with us</button></a>
                 <button class="donate"><i class="fa-solid fa-circle-dollar-to-slot"></i> Donate here</button>
-                <a href="tel:0712345678"><i class="fa-solid fa-phone-volume"></i>  Call us now!</a>
+                <a href="tel:0712345678"><i class="fa-solid fa-phone-volume fa-2x"></i></a>
                 <img width="26px" height="26px"src="5077.jpg" class="topImage">
             </div>
 
