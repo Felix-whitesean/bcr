@@ -2,8 +2,8 @@
     session_start();
     $pass = $_POST['adPass'];
     $uname = $_POST['adName'];
-    // $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
-    $conn = mysqli_connect('localhost','root','','biochar');
+    $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
+    // $conn = mysqli_connect('localhost','root','','biochar');
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
