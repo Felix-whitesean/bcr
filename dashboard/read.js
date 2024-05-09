@@ -38,7 +38,7 @@ for(i = 0; i < list.length; i++){
         if(toDisplay.className == "email"){
             emailButtons[2].classList.add("clicked");
         }
-        toDisplay.style.display = "initial";
+        toDisplay.style.display = "flex";
         setTimeout(function() {
             toDisplay.style.width = "100%";
         }, 1);
