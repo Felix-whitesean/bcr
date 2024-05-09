@@ -11,9 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     else{
         echo "Required data missing";
     }
-    $dsn = 'mysql:host=localhost;dbname=biochar';
-    $username = 'root';
-    $password = '';
+    // $dsn = 'mysql:host=localhost;dbname=biochar';
+    // $username = 'root';
+    // $password = '';
+    $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+    $username = 'biocharc_admin_init';
+    $password = 'Bcr<>23@Ng&F';
+    // $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
     
     try {
         $pdo = new PDO($dsn, $username, $password);
