@@ -164,7 +164,7 @@ function formsubmission(formid, actionfile, successMessage){
                         }
                     } else {
                         // minimize();
-                        location.reload();
+                        // location.reload();
                         pop("Error in submiting comments! Enter the required fields and try again", 6000);
                     }
                 }
