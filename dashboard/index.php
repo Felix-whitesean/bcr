@@ -161,7 +161,14 @@
                     <div class="compose">
                         <form id="emailform">
                             <h3>Fill in the following details to send the email</h3>
-                            <label>From: <fieldset><input type="email" id="selectedmail" name="from" placeholder ="Please select email in the Left" required disabled></fieldset></label>
+                            <label>From:
+                                <select name="email" required>
+                                    <option disabled="disabled">Choose an email to send from</option>
+                                    <option value="info@biocharclimateresolution.org">info</option>
+                                    <option value="admin@biocharclimateresolution.org">admin</option>
+                                    <option value="official@biocharclimateresolution.org">official</option>
+                                </select>
+                            </label>
                             <label>To: <fieldset><input type="email" name="receiver" required></fieldset></label>
                             <label>Subject: <fieldset><input type="text" name="subj"></fieldset></label>
                             <label>Content: <textarea name="content" required></textarea></label>

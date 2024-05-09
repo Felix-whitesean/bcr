@@ -1,5 +1,4 @@
 <?php
-
     if($_POST['receiver'] == "" || $_POST['content'] == "" || $_POST['subj'] == ""){
         // echo"Please enter all the required values";
         echo $_POST['from']." ".$_POST['receiver']." ".$_POST['content']." ".$_POST['subj'];
@@ -17,7 +16,7 @@
             "Reply-To" => "$from"
         );
     
-        // $message = file_get_contents("mail-template.html");
+        $message = file_get_contents("mail-template.html");
     
         $send = mail($to, $subject, $message, $headers);
     
