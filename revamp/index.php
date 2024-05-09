@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="meta" title="metadata'">
-                    <p class="hidden">Powered by:<a href="https://advivid.co.ke" target="_blank"><img src="advivid white.png" alt=""></a></p>
+                    <p class="hidden">Powered by:<a href="https://advivid.co.ke" target="_blank"><img src="https://biocharclimateresolution.org/revamp/advivid_white.png" alt=""></a></p>
                     <i class="fa-solid fa-info"></i>
                 </div>
             </section>
