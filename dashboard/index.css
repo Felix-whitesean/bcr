@@ -481,7 +481,6 @@ body {
     margin: 20px;
 }
 .email{
-    display: flex;
     display: none;
     border: 1px solid black;
     justify-content: space-between;
@@ -666,7 +665,7 @@ body {
 @media only screen and (max-width: 876px){
     .navigation{
         transition: 1s;
-        transform: translateX(-100%);
+        transform: translateX(-95%);
         position: absolute;
         left: 0;
         top: 0;
@@ -686,7 +685,7 @@ body {
         padding: 10px 12px;
         color: white;
         left: 10px;
-        transform: translateX(210px);
+        transform: translateX(180px);
         border-radius: 50%;
         user-select: none;
         border: 1px solid var(--white);
@@ -723,9 +722,25 @@ body {
         justify-content: space-evenly;
     }
     .members .list, .email .list{
-        margin-top: 50px;
-        max-width: 40%;
-        overflow-y: scroll;
+        margin: auto;
+        margin-top: 30px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-self: flex-start;
+        border: 1px solid black;
+    }
+    .members, .email{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .members .list::-webkit-scrollbar, .email .list-webkit-scrollbar{
+        width: 3px;
+        border-radius: 3px;
+    }
+    .members .list::-webkit-scrollbar-thumb, .email .list-webkit-scrollbar-thumb{
+        background: var(--brown);
+        color:rgb(0, 0, 0);
+
     }
     .container{
         width: 98vw;
