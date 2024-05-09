@@ -140,6 +140,7 @@ function formsubmission(formid, actionfile, successMessage){
                 return;
             }
         }
+            console.log(input.value);
             input.parentElement.style.borderColor = "initial";
             var formData = new FormData(form);
             const xhr = new XMLHttpRequest();
@@ -165,7 +166,7 @@ function formsubmission(formid, actionfile, successMessage){
                     } else {
                         // minimize();
                         // location.reload();
-                        pop("Error in submiting comments! Enter the required fields and try again", 6000);
+                        pop("Error! Enter the required fields and try again", 6000);
                     }
                 }
             }

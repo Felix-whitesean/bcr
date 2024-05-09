@@ -13,8 +13,8 @@
         $headers = array(
             "MIME-Version" => "1.0",
             "Content-Type" => "text/html;charset=UTF-8",
-            "From" => $from,
-            "Reply-To" => $from
+            "From" => "$from",
+            "Reply-To" => "$from"
         );
     
         // $message = file_get_contents("mail-template.html");
