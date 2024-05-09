@@ -724,6 +724,8 @@ body {
     }
     .members .list, .email .list{
         margin-top: 50px;
+        max-width: 40%;
+        overflow-y: scroll;
     }
     .container{
         width: 98vw;
