@@ -12,28 +12,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $subscription = 1;
         }
         else{
-            $subscription = 1;
+            $subscription = 0;
         }
-        echo "User request submitted successfull";
+
+         $conn = mysqli_connect('localhost','root','','biochar');
+        //  $conn = mysqli_connect('localhost','biocharc_admin_init','Bcr<>23@Ng&F','biocharc_YmlvY2hhcmRib25l');
+         // Check connection
+         if (mysqli_connect_errno()) {
+             echo "Failed to connect to MySQL: " . mysqli_connect_error();
+             exit();
+         }
+         $sql = "INSERT INTO requests(username,email,subscription, rules,country, telNo, joined_at)
+             VALUES('$name','$email','$subscription','$rules','$country', '$telNo', NOW())";
+         if (mysqli_query($conn, $sql)) {
+             echo"1";
+         }
+         else{
+             echo"Error in posting comment please try again";
+         }
     }
     else{
         echo "Required data missing";
     }
-    // $dsn = 'mysql:host=localhost;dbname=biochar';
-    // $username = 'root';
-    // $password = '';
-    
-    // try {
-    //     $pdo = new PDO($dsn, $username, $password);
-    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-    //     // Increment the like count for the specified post
-    //     $pdo->exec("INSERT INTO comments(funame,fmail,fsubject, fmessage,commented_at)
-    //     VALUES('$funame','$fmail','$fsubject','$fmessage', now())");
-    //     echo 'Thank you for your comments';
-    // } catch (PDOException $e) {
-    //     echo 'Database error: ' . $e->getMessage();
-    // }
 
 } else {
     echo 'Invalid request';

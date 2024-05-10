@@ -95,45 +95,58 @@ function formsubmission(frmId, targetFile, successMessage) {
              // Use trim() to remove leading/trailing whitespace
             if(textArea){
                 var textAreaValue = textArea.value.trim();
-            }
-            if (textAreaValue == "") {
-                characters = "";
+                if (textAreaValue == "") {
+                    characters = "";
+                    pop("Please enter value of textarea", 3000);
+                    textArea.focus();
+                    return;
+                }
             }
             if(input.type == "checkbox"){
                 if(!input.checked){
                     characters = "";
+                    pop("Please enter and check the required boxes", 3000);
+                    input.focus();
+                    return;
                 }
             }
             if(characters==""){
                 successMessage = "Please enter all the required details";
                 frmId = 0;
                 targetFile = "null";
+                input.style.borderColor = "red";
+                input.focus();
+                pop(successMessage, 3000);
                 return;
             }
-            else{
-                var formData = new FormData(form);
-
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', targetFile, true);
-                xhr.responseType = 'text';
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            console.log(xhr.responseText); // Display response from PHP (for testing)
-                            pop(successMessage, 6000);
-                            minimize();
-                            form.reset();
-                        } else {
-                            minimize();
-                            pop("Error in submiting comments!, enter the required fields and try again", 6000);
-                            // console.error('Failed to update like count');
-                        }
-                    }
-                };
-                xhr.send(formData);
-            }
         }
+        input.style.borderColor = "initial";
     })
+    var formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', targetFile, true);
+    xhr.responseType = 'text';
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText); // Display response from PHP (for testing)
+                if(xhr.responseText == 1){
+                    pop(successMessage, 6000);
+                    minimize();
+                    form.reset();
+                }
+                else{
+                    pop(xhr.responseText, 6000);
+                }
+            } 
+            // else {
+            //     setTimeout(function() {
+            //         pop("Error in submiting comments!, enter the required fields and try again", 6000);
+            //     },2000);
+            // }
+        }
+    };
+    xhr.send(formData);
 }
 
 function pop(txt, timeout){

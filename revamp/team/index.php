@@ -18,6 +18,9 @@
         <div class="constant"><img src="../ff.png" alt="LOADING"></div>
     </div>
     <div class="template">
+        <div>
+            <div class="popup"></div>
+        </div>
         <section class="navigation">
             <div class="left">
                 <div class="name">
@@ -48,7 +51,6 @@
         </section>
         <section class="view-window">
             <div class="top">
-                <div class="popup"></div>
                 <a href="https://wa.me/+256760493770" target="_blank"><button><i class="fa-brands fa-whatsapp"></i> Chat with us</button></a>
                 <button class="donate"><i class="fa-solid fa-circle-dollar-to-slot"></i> Donate here</button>
                 <a href="tel:0712345678"><i class="fa-solid fa-phone-volume"></i>  Call us now!</a>

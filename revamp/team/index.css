@@ -205,21 +205,6 @@ body {
     justify-content: space-evenly;
     z-index: 11;
 }
-.view-window .top .popup{
-    position: absolute;
-    color: var(--white);
-    background: black;
-    box-shadow: 2px 2px 3px var(--brown) inset, -2px -2px 3px var(--brown) inset;
-    border: 1px solid;
-    width: auto;
-    top: 52px;
-    text-wrap: wrap;
-    padding: 10px 13px;
-    display: none;
-    z-index: 1111;
-    max-width: 85vw;
-    margin: auto;
-}
 .view-window .top button, .view-window .top a, .view-window .top img{
     background: #F0F0F0;
     outline: none;

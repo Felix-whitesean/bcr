@@ -95,6 +95,24 @@ body {
         transform: scale(.5);   
     }
 }
+.template .popup{
+    position: fixed;
+    color: var(--white);
+    background: black;
+    box-shadow: 2px 2px 3px var(--brown) inset, -2px -2px 3px var(--brown) inset;
+    border: 1px solid;
+    width: auto;
+    top: 5px;
+    text-wrap: wrap;
+    padding: 10px 13px;
+    display: none;
+    z-index: 11111;
+    max-width: 85vw;
+    align-self: center;
+    margin: auto;
+    left: 50%;
+    transform: translate(-50%, 5px);
+}
 .navigation{
     flex: 0 0 208px;
     background: var(--green);
@@ -396,7 +414,7 @@ body {
 }
 .container .floatingpage form label input{
     width: 98%;
-    border:1px solid transparent;
+    border: none;
     outline: 1px solid transparent;
     background: transparent;
 }
