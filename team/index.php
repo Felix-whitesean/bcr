@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCR | Team</title>
+    <title>Biochar Climate Resolution</title>
+    <meta name="description" content="Biochar Climate Resolution, BCR">
+    <meta name="keywords" content="BCR, climate, green, climate change, busia, Biochar climate resolution, BCR team, Director, Founder">
+    <meta name="author" content="felix">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,8 +37,8 @@
                 </div>
                 <hr>
                 <nav class="topics">
-                    <a href="https://biocharclimateresolution.org/revamp/">Home</a>
-                    <a href="https://biocharclimateresolution.org/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="https://biocharclimateresolution.org/">Home</a>
+                    <a href="https://biocharclimateresolution.org/team/">Team <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#blog">Blogs section <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#about">About us <i class="fa-solid fa-angle-right"></i></a>
                 </nav>

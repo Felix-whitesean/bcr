@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCR</title>
+    <title>Biochar Climate Resolution - BCR</title>
+    <meta name="description" content="Biochar Climate Resolution, BCR, Biochar Kenya, BCR Kenya, About BCR, Biochar sale">
+    <meta name="keywords" content="Biochar, climate, green, climate change, busia, Biochar climate resolution">
+    <meta name="author" content="felix whitesean">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Miltonian&family=Sevillana&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../ff.png">
+    <link rel="icon" href="ff.png">
     <meta name="theme-color" content="rgb(22, 110, 22)">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
 </head>
