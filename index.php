@@ -15,7 +15,7 @@
 <body>
     <div class="loadingBackground">
         <div class="loading"></div>
-        <div class="constant"><img src="../ff.png" alt="LOADING"></div>
+        <div class="constant"><img src="ff.png" alt="LOADING"></div>
     </div>
     <div class="template">
         <div class="popup"></div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="name">
                     <div class="logo">
-                        <img src="../ff.png" alt="">
+                        <img src="ff.png" alt="">
                     </div>
                     <div class="acronym">
                         BCR
@@ -34,8 +34,8 @@
                 </div>
                 <hr>
                 <nav class="topics">
-                    <a href="https://biocharclimateresolution.org/revamp/">Home</a>
-                    <a href="https://biocharclimateresolution.org/revamp/team/">Team <i class="fa-solid fa-angle-right"></i></a>
+                    <a href="https://biocharclimateresolution.org/">Home</a>
+                    <a href="https://biocharclimateresolution.org/team/">Team <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#blog">Blogs section <i class="fa-solid fa-angle-right"></i></a>
                     <a href="#about">About us <i class="fa-solid fa-angle-right"></i></a>
                 </nav>
