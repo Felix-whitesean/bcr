@@ -75,7 +75,6 @@ forms.forEach( function (form){
     allinputs = form.querySelectorAll("input");
     allinputs.forEach(function (forminput){
         if(forminput.hasAttribute('required')){
-            console.log(form)
             required = document.createElement("span");
             required.textContent = "*";
             required.style.color = "red";
@@ -135,8 +134,6 @@ function formsubmission(frmId, targetFile, successMessage) {
             }
         }
     })
-    // console.log(form);
-
 }
 
 function pop(txt, timeout){
@@ -147,20 +144,12 @@ function pop(txt, timeout){
     }, timeout);
 }
 window.addEventListener('load', function(){
-    // head = document.querySelector('.head');
-    // head.addEventListener('click', function(){
-    //     window.location = "index.php"
-    // })
-    // li = document.querySelector('nav').querySelectorAll('li');
     navLinks = document.querySelector('nav').querySelectorAll('a');
     var cur = window.location.href;
     
     // first = document.querySelector('.first');
     for(i=0; i<navLinks.length; i++){
-        // console.log(cur);
-        // console.log(navLinks[i].href);
         if(cur == navLinks[i].href){
-            console.log(navLinks[i].href);
             navLinks[i].style.borderTop = "1px solid";
             navLinks[i].style.borderBottom = "1px solid";
             navLinks[i].style.color = "var(--white)";
