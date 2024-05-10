@@ -6,7 +6,7 @@
     <title>BCR | Team</title>
     <title>Biochar Climate Resolution</title>
     <meta name="description" content="Biochar Climate Resolution, BCR">
-    <meta name="keywords" content="BCR, climate, green, climate change, busia, Biochar climate resolution, BCR team, Director, Founder">
+    <meta name="keywords" content="BCR, climate, green, climate change, busia, Biochar climate resolution, BCR team, Director, CEO Founder Prince Sebe Maloba, Felix Kemboi - web developer, Justice Kipyegon - BCR director">
     <meta name="author" content="felix">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
