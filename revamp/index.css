@@ -621,6 +621,28 @@ body {
 .objectives li, .strategies li{
     padding: 10px 0;
 }
+.slidercontainer{
+    border: 1px solid red;
+    margin: 20px auto;
+}
+.scrolling-container{
+    display: inline-flex;
+    min-width: 100%;
+    flex-direction: row;
+    transition: 0.5s ease-in-out;
+    padding: 0;
+}
+
+.scrolling-container .scrolling-item{
+    flex: 0 0 100%;
+    margin: 0;
+    /* padding-left: 2.1%;
+    padding-right: 2.1%; */
+}
+.scrolling-container .scrolling-item image img{
+    /* width: 100%; */
+    max-height: 60px;
+}
 .faqs{
     background: var(--green-7);
     color: var(--white);

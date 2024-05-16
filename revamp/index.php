@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Miltonian&family=Sevillana&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../ff.png">
+    <link rel="icon" href="../logo.png">
     <meta name="theme-color" content="rgb(22, 110, 22)">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="loadingBackground">
         <div class="loading"></div>
-        <div class="constant"><img src="../ff.png" alt="LOADING"></div>
+        <div class="constant"><img src="../logo.png" alt="LOADING"></div>
     </div>
     <div class="template">
         <div class="popup"></div>
@@ -170,6 +170,23 @@
                         Sustainable innovation that produces environmental and economic impacts is essential, and therefore we are creating initiatives and delivering 
                         programs to support businesses and farming to decarbonize, reduce waste, increase organic fertilizer and build resilient, low carbon supply chains.
                     </li>
+            </section>
+            <hr>
+            <section class="gallery">
+                <div class="slidercontainer"> 
+                    <div class="scrolling-container">
+                        <div class="scrolling-item">
+                            <div class="slide">
+                                <image><img src="5077.jpg" alt=""></image>
+                            </div>
+                        </div>
+                        <div class="scrolling-item">
+                            <div class="slide">
+                                <image><img src="5077.jpg" alt=""></image>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <hr>
             <section class="faqs">

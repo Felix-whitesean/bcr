@@ -176,3 +176,31 @@ window.addEventListener('load', function(){
         nav.classList.toggle('navDisplay');
     }
 })
+const slider = document.querySelector('.scrolling-container');
+// const prevBtn = document.getElementById('prev');
+// const nextBtn = document.getElementById('next');
+
+// let slideIndex = 0;
+// const slides = document.querySelectorAll('.scrolling-item');
+setTimeout(function() {
+    slider.style.transform = `translateX(-${100}%)`;
+},10000);
+
+// //
+// indicatorDiv = document.querySelector('.indicator');
+// indicators = indicatorDiv.querySelectorAll('span');
+
+// indicators[0].style.background = "rgb(0, 188, 212)";
+// indicators[0].style.transform = "scale(1.2)";
+// // Function to show a specific slide
+// function showSlide(index) {
+//     slider.style.transition= "3s eas-in-out"
+//     slider.style.transform = `translateX(-${index * 100}%)`;
+// }
+
+// // Function to go to the previous slide
+// function prevSlide() {
+//     slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+//     showSlide(slideIndex);
+//     indicating();
+// }
