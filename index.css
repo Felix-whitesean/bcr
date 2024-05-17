@@ -598,13 +598,13 @@ body {
     color: var(--first-yellow);
 }
 .image1{
-    background-image: url('../gallery/IMG_20231209_142925_893.jpg');
+    background-image: url('../gallery/web2.webp');
 }
 /* .image2{
     background-image: url('../gallery/IMG_20231214_163831_197.jpg');
 } */
 .image3{
-    background-image: url('../gallery/IMG_20231215_085736_047.jpg');
+    background-image: url('../gallery/web1.webp');
 }
 .image4{
     background-image: url('../gallery/FB_IMG_16728953242351.jpg');
