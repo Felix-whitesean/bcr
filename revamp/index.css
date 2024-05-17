@@ -871,6 +871,9 @@ body {
         flex-direction: column-reverse;
         margin-left: 0;
     }
+    .slidercontainer{
+        width: 95%;
+    }
     .imagecontainer{
         width: 70vw;
         align-self: center;
