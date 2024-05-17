@@ -625,7 +625,7 @@ body {
     background: rgb(255, 255, 255,);
     border-radius: 5px;
 }
-.gallery h3{
+.gallery h4{
     text-align: center;
     padding: 5px 10px;
     background: linear-gradient(60deg, transparent 10%, var(--green) 80%, transparent 10%);
@@ -701,42 +701,54 @@ body {
     border-radius: 50%;
 }
 .faqs{
-    background: var(--green-7);
     color: var(--white);
     padding: 30px;
+}
+.faqs h4{
+    text-align: center;
+    padding: 5px 10px;
+    background: linear-gradient(60deg, transparent 10%, var(--green) 88%, transparent 2%);
+    color: rgb(0, 0, 0, .7);
+    text-shadow: 1px 1px 1px var(--brown);
+    font-family: var(--tertiary-text);
+    text-decoration: double underline;
+    font-weight: 400;
 }
 .faqs .cont{
     max-width: 60%;
     margin: auto;
 }
 .faqs .cont li{
+    background: var(--brown-8);
+    list-style: none;
+    display: block;
+    border: 1px solid black;
+    padding: 4px 7px;
+}
+.faqs .cont li h3{
     display: flex;
     justify-content: space-between;
-    list-style: decimal-leading-zero;
-    width: 100%;
+    width: 85%;
     cursor: pointer;
-    background: rgb(0, 0, 0, .5);
     border-radius: 10px;
+    user-select: none;
+    font-weight: 200;
+    margin: 10px auto;
     padding: 10px 20px;
-    user-select: none;
 }
-.faqs .cont li p{
-    display: flex;
-    position: relative;
-}
-.faqs .cont li span:first-child{
-    align-self: flex-start;
-    user-select: none;
-    gap: 15px;
-    display: flex;
-    position: absolute;
-    bottom: -20px;
-}
-.faqs .cont li:hover{
-    background:rgb(0, 0, 0, .9);
+.faqs .cont li h3 span{
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .faqs .cont li i{
-    align-self: center;
+    align-self: flex-end;
+}
+.faqs .cont li p{
+    padding: 10px 20px;
+    display: none;
+    color: white;
+    font-weight: 100;
 }
 .bars{
     padding: 10px 17px;

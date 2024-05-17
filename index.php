@@ -177,7 +177,7 @@
             <hr>
             <section class="gallery">
                 <div class="explanation">
-                    <h3>Gallery</h3>
+                    <h4>Gallery</h4>
                     <p>
                         <li>These are some of the project pictures.</li>
                         <li>Please join us to get the updates.</li>
@@ -222,30 +222,41 @@
             </section>
             <hr>
             <section class="faqs">
-                <h4>Frequently asked questions</h4>
+                <h4>Frequently asked questions (FAQs)</h4>
                 <div class="cont">
                     <ol>
-                        <li>
-                            <p>
-                                <span>
-                                    <i class="fa-regular fa-thumbs-up" title="likes">1</i>
-                                    <i class="fa-regular fa-thumbs-down" title="dislikes">0</i>
-                                </span>
-                                <span>Why do BCR need donations?</span>
-                            </p>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </li>
-                        <hr>
-                        <li>
-                            <p>
-                                <span>
-                                    <i class="fa-regular fa-thumbs-up" title="likes">1</i>
-                                    <i class="fa-regular fa-thumbs-down" title="dislikes">0</i>
-                                </span>
-                                <span>Why do BCR need donations?</span>
-                            </p>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </li>
+                    <?php
+                            $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            $username = 'biocharc_admin_init';
+                            $password = 'Bcr<>23@Ng&F'; 
+                            
+                            // $dsn = 'mysql:host=localhost;dbname=biochar';
+                            // $username = 'root';
+                            // $password = ''; 
+                            try {
+                                $pdo = new PDO($dsn, $username, $password);
+                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $sql = "SELECT * FROM faqs";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($results as $row) {
+                                    $title = $row['faq_title'];
+                                    $answer = $row['faq_answer'];
+                                    ?>
+                                    <li>
+                                        <h3><span><?php echo $title; ?></span>
+                                            <i class="fa-solid fa-angle-right"></i>
+                                        </h3>
+                                        <p><?php echo $answer; ?></p>
+                                    </li>
+                                    <br>
+                                    <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo 'Database error: ' . $e->getMessage();
+                            }
+                        ?>
                     </ol>
                 </div>
             </section>

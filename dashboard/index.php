@@ -239,6 +239,17 @@
                     </form>
                     <div id="message"></div>
                 </div>
+                <br>
+                <div class="container">
+                    <form id="faqs" method="post">
+                        <h2>Update FAQs</h2>
+                        <label>FAQ title:<fieldset><input type="text" name="faq-title" required></fieldset></label>
+                        <br>
+                        <label>Answer:<textarea placeholder="Input answer" name="answer" required></textarea></label>
+                        <br>
+                        <button type="button" onclick="formsubmission('faqs','addfaqs.php', 'Faqs updated...')">Sumbit</button>
+                    </form>
+                </div>
             </section>
             <section class="comments"></section>
             <section class="blog"></section>

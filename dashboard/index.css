@@ -668,13 +668,13 @@ body {
     background: rgb(240, 240, 240, .6);
     border-radius: 20px;
     margin: auto;
-    height: 90%;
+    height: auto;
     border: 1px solid var(--brown);
     width: fit-content;
 }
 .editable-pages .container {
-    width: 50%;
-    margin: auto;
+    margin: 2% auto;
+    width: 60%;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -687,7 +687,7 @@ body {
 
 .editable-pages form {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 2%;
 }
 
 .editable-pages button {

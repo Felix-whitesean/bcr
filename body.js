@@ -227,3 +227,18 @@ function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
 }
 startAutoPlay();
+
+faqs = document.querySelector(".faqs").querySelector(".cont").querySelectorAll("li");
+faqs.forEach( function(faq){
+     h3 = faq.querySelector("h3");
+    h3.addEventListener("mouseenter", function(){
+        faq.querySelector("p").style.display = "initial";
+        h3.querySelector("span").style.textWrap = "wrap";
+        h3.querySelector("i").style.transform = "rotate(90deg)";
+    });
+    h3.addEventListener("mouseleave", function(){
+        faq.querySelector("p").style.display = "none";
+        h3.querySelector("span").style.textWrap = "nowrap";
+        h3.querySelector("i").style.transform = "rotate(0)";
+    });
+})
