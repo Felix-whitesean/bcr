@@ -228,7 +228,18 @@
                     </div>
                 </div>
             </section>
-            <section class="editable-pages"></section>
+            <section class="editable-pages">
+                
+                <div class="container">
+                    <h2>Upload File</h2>
+                    <p>Update Gallery Images here</p>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" name="file" id="fileInput">
+                        <button type="submit">Save</button>
+                    </form>
+                    <div id="message"></div>
+                </div>
+            </section>
             <section class="comments"></section>
             <section class="blog"></section>
             <section class="contact-details"></section>

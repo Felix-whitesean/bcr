@@ -173,6 +173,28 @@ function formsubmission(formid, actionfile, successMessage){
             xhr.send(formData);
     })
 }
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var fileInput = document.getElementById('fileInput');
+    var file = fileInput.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+
+    fetch('uploadfile.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // document.getElementById('message').textContent = data.split("*/*")[0];;
+        // if(data.split("*/*")[0] == "File uploaded successfully!"){
+        //     document.getElementById('filename').value = data.split("*/*")[1];
+        // }
+        pop(data.split("*/*")[0], 4000);
+        fileInput.value = ''; // Clear file input after upload
+    })
+    .catch(error => console.error('Error:', error));
+});
 function pop(txt, timeout){
     popupwindow.textContent = txt;
     popupwindow.style.display = "initial";

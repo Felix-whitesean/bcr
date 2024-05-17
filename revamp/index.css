@@ -6,7 +6,7 @@
     --brown-8: rgb(227, 120, 30, .8);
     --first-yellow-8: rgb(247, 180, 10, .8);
     --white: rgb(240, 240, 240);
-    --tertiary-text: "Miltonian", serif;
+    --secondary-text: "Miltonian", serif;
     --tertiary-text: "Inknut Antiqua", serif;
     --inter-text: "Inter", sans-serif;
     --curly: "Sevillana", cursive;
@@ -622,26 +622,68 @@ body {
     padding: 10px 0;
 }
 .slidercontainer{
-    border: 1px solid red;
-    margin: 20px auto;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
 }
 .scrolling-container{
-    display: inline-flex;
+    display: flex;
     min-width: 100%;
     flex-direction: row;
     transition: 0.5s ease-in-out;
     padding: 0;
+
 }
 
 .scrolling-container .scrolling-item{
     flex: 0 0 100%;
     margin: 0;
-    /* padding-left: 2.1%;
-    padding-right: 2.1%; */
+    position: relative;
 }
-.scrolling-container .scrolling-item image img{
-    /* width: 100%; */
-    max-height: 60px;
+.scrolling-container .scrolling-item::before{
+    content: "BCR";
+    width: 100%;
+    position: absolute;
+    z-index: 11;
+    height: auto;
+    color: transparent;
+    text-align: center;
+    padding: 2px 0;
+    padding-bottom: 20%;
+    margin-left: 100%;
+    font-family: var(--secondary-text);
+    font-size: 25px;
+    text-shadow: 2px 2px 1px rgb(240, 240, 240, .8);
+    margin-top: 33%;
+    text-transform: uppercase;
+    text-decoration: double underline;
+    font-style: italic;
+}
+.scrolling-container .scrolling-item .slide img{
+    width: 100%;
+    max-height: 200px;
+    pointer-events: none;
+    margin: auto;
+    user-select: none;
+}
+.indicator{
+    margin: auto;
+    background: var(--green);
+    padding: 2px 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 50%;
+    justify-content: center;
+    padding: 7px 0;
+}
+
+.indicator span{
+    height: 9px;
+    width: 9px;
+    background: rgb(0, 0, 0, .7);
+    border-radius: 50%;
 }
 .faqs{
     background: var(--green-7);

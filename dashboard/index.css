@@ -662,6 +662,53 @@ body {
     cursor: pointer;
     padding-left: 20px;
 }
+.editable-pages{
+    display: none;
+    flex-direction: column;
+    background: rgb(240, 240, 240, .6);
+    border-radius: 20px;
+    margin: auto;
+    height: 90%;
+    border: 1px solid var(--brown);
+    width: fit-content;
+}
+.editable-pages .container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.editable-pages h2 {
+    text-align: center;
+}
+
+.editable-pages form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.editable-pages button {
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: black;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.editable-pages button:hover {
+    outline: 2px 2px var(--brown);
+    background-color: var(--green);
+}
+
+#message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
 @media only screen and (max-width: 876px){
     .navigation{
         transition: 1s;
