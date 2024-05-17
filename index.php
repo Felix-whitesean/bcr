@@ -176,6 +176,13 @@
             </section>
             <hr>
             <section class="gallery">
+                <div class="explanation">
+                    <h3>Gallery</h3>
+                    <p>
+                        <li>This are some of the project pictures.</li>
+                        <li>Please join us to get the updates.</li>
+                    </p>
+                </div>
                 <div class="slidercontainer"> 
                     <div class="scrolling-container">
                     <?php

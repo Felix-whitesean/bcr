@@ -621,6 +621,22 @@ body {
 .objectives li, .strategies li{
     padding: 10px 0;
 }
+.gallery{
+    background: rgb(255, 255, 255,);
+    border-radius: 5px;
+}
+.gallery h3{
+    text-align: center;
+    padding: 5px 10px;
+    background: linear-gradient(60deg, transparent 10%, var(--green) 80%, transparent 10%);
+    color: rgb(0, 0, 0, .7);
+    text-shadow: 1px 1px 1px var(--brown);
+    font-family: var(--tertiary-text);
+    text-decoration: double underline;
+}
+.gallery li{
+    text-align: center;
+}
 .slidercontainer{
     width: 50%;
     margin: auto;
@@ -635,7 +651,6 @@ body {
     padding: 0;
 
 }
-
 .scrolling-container .scrolling-item{
     flex: 0 0 100%;
     margin: 0;
@@ -766,7 +781,8 @@ body {
         height: fit-content;
     }
     .navigation .name{
-        margin-left: 10%;
+        margin-left: 30%;
+        transition: translateX(-30%);
     }
     .navigation .topics{
         display: none;
@@ -778,7 +794,8 @@ body {
         display: block;
         top: 8px;
         z-index: 111;
-        height: 97vw;
+        height: 97vh;
+        margin-top: -7px;
     }
     .navDisplay .bars{
         position: relative;
@@ -790,6 +807,9 @@ body {
         display: block;
         flex: 1;   
     }
+    .navDisplay .name{
+        margin-left: 0;
+    }
     .follow{
         margin-top: 0;
     }
@@ -798,8 +818,9 @@ body {
     }
     .view-window .top{
         width: 100%;
-        margin-top: -20px;
+        margin-top: 0;
         height: 20px;
+        background: var(--green);
     }
     .view-window .top img{
         top: -50px;
@@ -872,7 +893,7 @@ body {
         margin-left: 0;
     }
     .slidercontainer{
-        width: 95%;
+        width: 85%;
     }
     .imagecontainer{
         width: 70vw;
