@@ -704,7 +704,7 @@ body {
     color: var(--white);
     padding: 30px;
 }
-.faqs h4{
+.operations h4, .faqs h4{
     text-align: center;
     padding: 5px 10px;
     background: linear-gradient(60deg, transparent 10%, var(--green) 88%, transparent 2%);
@@ -749,6 +749,30 @@ body {
     display: none;
     color: white;
     font-weight: 100;
+}
+.operations .operationscontainer{
+    display: flex;
+}
+.operations .operationscontainer .image{
+    margin: 20px;
+    min-width: 40%;
+    min-height: 250px;
+    border: 5px solid var(--brown);
+    background-position: center;
+    background-image: url('download.jpeg');
+    background-size: contain;
+    background-color: var(--green-7);
+    background-repeat: no-repeat;
+}
+.operations .operationscontainer p a{
+    color: var(--green);
+}
+.operations .operationscontainer p a:hover{
+    color: var(--green);
+    text-decoration: none;
+}
+.operations .operationscontainer p a:visited{
+    color: black;
 }
 .bars{
     padding: 10px 17px;
@@ -918,6 +942,12 @@ body {
         max-width: 90%;
         padding: 0;
         margin: initial;
+    }
+    .operations .operationscontainer .image{
+        min-width: 80%;
+    }
+    .operations .operationscontainer{
+        flex-wrap: wrap;
     }
     .bars{
         display: flex

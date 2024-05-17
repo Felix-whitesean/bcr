@@ -260,6 +260,17 @@
                     </ol>
                 </div>
             </section>
+            <hr>
+            <section class="operations">
+                <h4>Area of operation</h4>
+                <div class="operationscontainer">
+                    <div class="image"></div>
+                    <p>
+                        Biochar Climar Resolution (BCR) is currently focused on <a href="https://www.google.com/search?q=Lake+Region+Economic+Bloc+-Kenya" target="_blank" rel="noopener noreferrer">Lake Region Economic Bloc in Kenya.</a>
+                    </p>
+                </div>
+            </section>
+            <hr>
             <section class="footer">
                 <?php include('footer.html') ?>
             </section> 
