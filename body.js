@@ -176,3 +176,54 @@ window.addEventListener('load', function(){
         nav.classList.toggle('navDisplay');
     }
 })
+const slider = document.querySelector('.scrolling-container');
+// const prevBtn = document.getElementById('prev');
+// const nextBtn = document.getElementById('next');
+
+let slideIndex = 0;
+const slides = slider.querySelectorAll('.scrolling-item');
+indicator = document.querySelector('.indicator');
+slides.forEach( function(){
+    indicate = document.createElement('span');
+    indicator.appendChild(indicate);
+})
+indicators = indicator.querySelectorAll('span');
+
+indicators[0].style.background = "var(--white)";
+indicators[0].style.transform = "scale(1.2)";
+function showSlide(index) {
+    slider.style.transition= "3s eas-in-out"
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+// Function to go to the previous slide
+function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+    indicating();
+}
+
+// Function to go to the next slide
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+    indicating();
+}
+function indicating(){
+    for(i = 0;i < indicators.length; i++){
+        if(i == slideIndex){
+            indicators[i].style.backgroundColor = "var(--white)";
+            indicators[i].style.transition = "1s";
+            indicators[i].style.transform = "scale(1.2)";
+        }
+        else{
+            indicators[i].style.backgroundColor = "rgb(0, 0, 0, .7)";
+            indicators[i].style.transition = "1s";
+            indicators[i].style.transform = "scale(1)";
+        }
+    }
+}
+let autoPlayInterval;
+function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
+startAutoPlay();

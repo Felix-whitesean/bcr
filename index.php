@@ -175,6 +175,45 @@
                     </li>
             </section>
             <hr>
+            <section class="gallery">
+                <div class="slidercontainer"> 
+                    <div class="scrolling-container">
+                    <?php
+                            // $dsn = 'mysql:host=localhost;dbname=biocharc_YmlvY2hhcmRib25l';
+                            // $username = 'biocharc_admin_init';
+                            // $password = 'Bcr<>23@Ng&F'; 
+                            
+                            $dsn = 'mysql:host=localhost;dbname=biochar';
+                            $username = 'root';
+                            $password = ''; 
+                            try {
+                                $pdo = new PDO($dsn, $username, $password);
+                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $sql = "SELECT file_name FROM files";
+                                $stmt = $pdo->prepare($sql);
+                                $stmt->execute();
+                                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($results as $row) {
+                                    $filename = $row['file_name'];
+                                    ?>
+                                    <div class="scrolling-item">
+                                        <div class="slide">
+                                            <image><img src='../images/<?php echo $filename;?>' alt=""></image>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo 'Database error: ' . $e->getMessage();
+                            }
+                        ?>
+                    </div>
+                    <div class="indicator">
+
+                    </div>
+                </div>
+            </section>
+            <hr>
             <section class="faqs">
                 <h4>Frequently asked questions</h4>
                 <div class="cont">
