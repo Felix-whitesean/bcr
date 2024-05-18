@@ -124,18 +124,18 @@
                 <div class="extraction">
                     <image class="imagecontainer image1"></image>
                         <span class="explanation">
-                            <h3>Weeds and Prunings</h3>
+                            <h3>Bamboo</h3>
                             <p>Green vegetation types can be utilized to produce biochar, a carbon-rich material obtained through the process of pyrolysis.
-                                <br><br> Pyrolysis involves heating biomass in the absence of oxygen, converting it into biochar while also producing bioenergy.</p>
+                            Bamboo is often considered an excellent material for biochar production due to its high cellulose content and fast growth rate.
+                                <br><br>Pyrolysis involves heating biomass in the absence of oxygen, converting it into biochar while also producing bioenergy.</p>
                         </span>
                 </div>
                 <br>
                 <div class="production">
                     <image class="imagecontainer image3"></image>
                     <span>
-                        <h3>Biochar Production from Weeds and Prunings</h3>
-                    
-                        <p>This shows resultant biochar products made of weeds and prunings that can be used as organic manure. 
+                        <h3>Biochar Production from bamboo</h3>
+                        <p>This shows resultant biochar products made of bamboo that can be used as organic manure. 
                         It acts as a stable carbon source, enhancing soil structure, nutrient retention, and microbial activity.
                         <br><br> Compacting this biochar into pellets increases convenience for application. 
                         These pellets can be spread across the soil surface as shown in the next frame.</p>
