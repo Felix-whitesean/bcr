@@ -149,7 +149,6 @@ function formsubmission(formid, actionfile, successMessage){
                 return;
             }
         }
-        console.log(input.value);
         input.parentElement.style.borderColor = "initial";
     })
     var formData = new FormData(form);

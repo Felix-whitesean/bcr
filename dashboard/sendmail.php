@@ -17,11 +17,12 @@
         $headers = "From: $from_email\r\n";
         $headers .= "Reply-To: $from_email\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $headers .= "Content-Type: text/html; charset==UTF-8\r\n";
+        // "Content-Type" => "text/html;charset=UTF-8",
 
         // Send email
         if (mail($to_email, $subject, $content, $headers)) {
-            echo "Email sent successfully!";
+            echo "1";
         } else {
             echo "Error: Unable to send email.";
         }

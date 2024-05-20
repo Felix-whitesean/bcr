@@ -175,7 +175,7 @@
                             <label>To: <fieldset><input type="email" name="receiver" required></fieldset></label>
                             <label>Subject: <fieldset><input type="text" name="subj"></fieldset></label>
                             <label>Content: <textarea name="content" required></textarea></label>
-                            <button type="button" onclick="formsubmission('emailform', 'sendmail.php', 'Email sent successfull...')">Send</button>
+                            <button type="button" onclick="formsubmission('emailform', 'sendmail.php', 'Email sent successfully...')">Send</button>
                         </form>
                     </div>
                 </div>
