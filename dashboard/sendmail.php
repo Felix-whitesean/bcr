@@ -4,21 +4,27 @@
         echo $_POST['from']." ".$_POST['receiver']." ".$_POST['content']." ".$_POST['subj'];
     }
     else{
-        $to = $_POST['receiver'];
-        $subject = $_POST['subj'];
-        $message = $_POST['content'];
-        $from = $_POST['from'];
+        // $to = $_POST['receiver'];
+        // $subject = $_POST['subj'];
+        // $message = $_POST['content'];
+        // $from = $_POST['from'];
 
-        $headers = array(
-            "MIME-Version" => "1.0",
-            "Content-Type" => "text/html;charset=UTF-8",
-            "From" => "$from",
-            "Reply-To" => "$from"
-        );
-    
-        $message = file_get_contents("mail-template.html");
-    
-        $send = mail($to, $subject, $message, $headers);
-    
-        echo($send ? "1" : "There was an error in sending email" );
+        // Get form data
+        $from_email = $_POST['from'];
+        $to_email = $_POST['receiver'];
+        $subject = $_POST['subj'];
+        $content = $_POST['content'];
+        // Set headers
+        $headers = "From: $from_email\r\n";
+        $headers .= "Reply-To: $from_email\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+        // Send email
+        if (mail($to_email, $subject, $content, $headers)) {
+            echo "Email sent successfully!";
+        } else {
+            echo "Error: Unable to send email.";
+        }
     }
+?>
