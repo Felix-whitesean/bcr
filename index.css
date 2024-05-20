@@ -632,7 +632,6 @@ body {
     color: rgb(0, 0, 0, .7);
     text-shadow: 1px 1px 1px var(--brown);
     font-family: var(--tertiary-text);
-    text-decoration: double underline;
 }
 .gallery li{
     text-align: center;
@@ -656,7 +655,7 @@ body {
     margin: 0;
     position: relative;
 }
-.scrolling-container .scrolling-item::before{
+.scrolling-container .scrolling-item::after{
     content: "BCR";
     width: 100%;
     position: absolute;
@@ -670,9 +669,7 @@ body {
     font-family: var(--secondary-text);
     font-size: 25px;
     text-shadow: 2px 2px 1px rgb(240, 240, 240, .8);
-    margin-top: 33%;
     text-transform: uppercase;
-    text-decoration: double underline;
     font-style: italic;
 }
 .scrolling-container .scrolling-item .slide img{
@@ -711,7 +708,6 @@ body {
     color: rgb(0, 0, 0, .7);
     text-shadow: 1px 1px 1px var(--brown);
     font-family: var(--tertiary-text);
-    text-decoration: double underline;
     font-weight: 400;
 }
 .faqs .cont{
