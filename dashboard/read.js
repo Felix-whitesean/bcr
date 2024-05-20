@@ -151,36 +151,36 @@ function formsubmission(formid, actionfile, successMessage){
         }
         console.log(input.value);
         input.parentElement.style.borderColor = "initial";
-        var formData = new FormData(form);
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', actionfile, true);
-        xhr.responseType = 'text';
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                    if(xhr.responseText == 1){
-                        pop(successMessage, 3000);
-                        form.reset();
-                        setTimeout(function() {
-                            location.reload();
-                        }, 1000);
-                    }
-                    else{
-                        pop(xhr.responseText, 3000);
-                        if(formid == "commentsform"){
-                            form.reset();
-                        }
-                    }
-                } else {
-                    // minimize();
-                    // location.reload();
-                    pop("Error! Enter the required fields and try again", 6000);
+    })
+    var formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', actionfile, true);
+    xhr.responseType = 'text';
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                if(xhr.responseText == 1){
+                    pop(successMessage, 3000);
+                    form.reset();
+                    setTimeout(function() {
+                        location.reload();
+                    }, 1000);
                 }
+                else{
+                    pop(xhr.responseText, 3000);
+                    if(formid == "commentsform"){
+                        form.reset();
+                    }
+                }
+            } else {
+                // minimize();
+                // location.reload();
+                pop("Error! Enter the required fields and try again", 6000);
             }
         }
-        xhr.send(formData);
-    })
+    }
+    xhr.send(formData);
 }
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
     event.preventDefault();
