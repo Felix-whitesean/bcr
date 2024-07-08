@@ -9,38 +9,68 @@ popupwindow = document.querySelector(".popup");
 emailButtons = document.querySelector('.email').querySelector('.head').querySelectorAll('button');
 list = document.querySelector(".topics").querySelectorAll("li");
 for(i = 0; i < list.length; i++){
-    list[i].style.color = "var(--white)";
+    
+    list[i].style.color = "var(--green)";
+    const listName = document.createElement("span");
+    listName.textContent = list[i].getAttribute('title');
+    list[i].appendChild(listName);
+    document.querySelector("."+list[i].getAttribute('title').toLowerCase().split(" ").join("-")).style.display = "none";
     list[i].addEventListener("click", clicked)
     function clicked(event){
         document.querySelector(".landingprofile").style.display = "none";
-        arrowLeft = document.querySelector(".floatingheader").querySelector("i");
+        arrowLeft = document.querySelector(".landing").querySelector("i");
         arrowLeft.style.display = "initial";
         arrowLeft.addEventListener("click", function(){
             for(i = 0; i<list.length; i++){
-                list[i].style.color = "var(--white)";
-                list[i].style.paddingLeft= "0";
-                document.querySelector("."+list[i].textContent.toLowerCase().replace(" ", "-")).style.display = "none";
-                document.querySelector("."+list[i].textContent.toLowerCase().replace(" ", "-")).style.width = "0";
+                list[i].style.color = "var(--green)";
+                list[i].querySelector('i').style.color = "var(--green)";
+                list[i].querySelector('span').style.color = "var(--green)";
+                list[i].style.paddingLeft= "5px";
+                list[i].querySelector('i').style.paddingLeft= "5px";
+                list[i].querySelector('span').style.paddingLeft= "5px";
+                list[i].style.background= "transparent";
+                document.querySelector("."+list[i].getAttribute('title').toLowerCase().split(" ").join("-")).style.display = "none";
+                document.querySelector("."+list[i].getAttribute('title').toLowerCase().split(" ").join("-")).style.width = "0";
                 document.querySelector(".landingprofile").style.display = "block";
                 arrowLeft.style.display = "none";
                 // return;
             }
         });
         for(i = 0; i<list.length; i++){
-            list[i].style.color = "var(--white)";
-            list[i].style.paddingLeft= "0";
-            document.querySelector("."+list[i].textContent.toLowerCase().replace(" ", "-")).style.display = "none";
-            document.querySelector("."+list[i].textContent.toLowerCase().replace(" ", "-")).style.width = "0";
+            list[i].style.color = "var(--green)";
+            list[i].querySelector('i').style.color = "var(--green)";
+            list[i].querySelector('span').style.color = "var(--green)";
+            list[i].style.paddingLeft= "5px";
+            list[i].querySelector('i').style.paddingLeft= "5px";
+            list[i].querySelector('span').style.paddingLeft= "5px";
+            list[i].style.background= "transparent";
+            document.querySelector("."+list[i].getAttribute('title').toLowerCase().split(" ").join("-")).style.display = "none";
+            document.querySelector("."+list[i].getAttribute('title').toLowerCase().split(" ").join("-")).style.width = "0";
         }
         event.target.style.color = "var(--brown)";
         event.target.style.paddingLeft= "12px";
-        toDisplay = document.querySelector("."+event.target.textContent.toLowerCase().replace(" ", "-"));
+        if(event.target.tagName.toLowerCase() == "i" || event.target.tagName.toLowerCase() == "span"){
+            toDisplay = document.querySelector("."+event.target.parentElement.getAttribute('title').toLowerCase().split(" ").join("-")); 
+            event.target.parentElement.querySelector('i').style.color = "var(--brown)";
+            event.target.parentElement.querySelector('span').style.color = "var(--brown)";
+            event.target.parentElement.style.paddingLeft= "12px";
+            event.target.parentElement.style.background= "rgb(255, 255, 255)";
+            event.target.style.paddingLeft= "0";
+        }
+        else{
+            toDisplay = document.querySelector("."+event.target.getAttribute('title').toLowerCase().split(" ").join("-"));
+            event.target.querySelector('i').style.color = "var(--brown)";
+            event.target.querySelector('span').style.color = "var(--brown)";
+            event.target.style.background= "rgb(255, 255, 255)";
+        }
         if(toDisplay.className == "email"){
             emailButtons[2].classList.add("clicked");
         }
         toDisplay.style.display = "flex";
         setTimeout(function() {
-            toDisplay.style.width = "100%";
+            toDisplay.style.width = "99%";
+            toDisplay.style.margin = "auto";
+            toDisplay.style.marginTop = "1%";
         }, 1);
     };
 }
@@ -55,7 +85,6 @@ function listenClick(){
     }
 }
 actionBtns = document.querySelector(".settings").querySelectorAll("li");
-
 for(i = 0; i < actionBtns.length; i++){
     actionBtns[i].addEventListener("click", listenClick);
 }
@@ -64,6 +93,13 @@ function listenClick(btn){
         document.getElementById(actionBtns[i].id+"form").style.display = "none";
     }
     document.getElementById(btn.target.id+"form").style.display = "flex";
+}
+function minimize(cancelbtn){
+    setTimeout(function() {
+        cancelbtn.parentElement.style.display = "none";
+    }, 100);
+    
+    pop("process cancelled", 3000);
 }
 // Get all radio buttons by name
 var radioButtons = document.querySelector(".email").querySelectorAll('input[type="radio"][name="email"]');
@@ -98,8 +134,8 @@ members.forEach(function(user){
                 profilecontainer.querySelector(".fullname").textContent = username;
                 profilecontainer.querySelector(".title").textContent = title;
                 profilecontainer.querySelector(".profile").textContent = about;
-                profilecontainer.querySelectorAll("a")[0].href = "tel:"+whatsapp;
-                profilecontainer.querySelectorAll("a")[0].textContent = whatsapp;
+                // profilecontainer.querySelectorAll("a")[0].href = "tel:"+whatsapp;
+                // profilecontainer.querySelectorAll("a")[0].textContent = whatsapp;
                 profilecontainer.querySelectorAll("a")[1].href = "mailto:"+email;
                 profilecontainer.querySelectorAll("a")[1].textContent = email;
             },
@@ -210,33 +246,9 @@ function pop(txt, timeout){
         popupwindow.style.display = "none";
     }, timeout);
 }
-function minimize(){
-    setTimeout(function() {
-        location.reload();
-    }, 1000);
-    pop("process cancelled", 3000);
-}
-forms = document.querySelectorAll('form');
 
-forms.forEach(function (form){
-    inputs = form.querySelectorAll('input[type="password"]');
-    inputs.forEach( function(input){
-            input.parentElement.querySelector('i').addEventListener("click", toggleinput);
-    })
-})
-function toggleinput(togglebtn){
-    // console.log(togglebtn.target.classList[1]);
-    if (togglebtn.target.classList[1] == 'fa-eye'){
-        togglebtn.target.classList.remove('fa-eye');
-        togglebtn.target.classList.add('fa-eye-slash');
-        togglebtn.target.parentElement.querySelector('input').type = "text";
-    }
-    else{
-        togglebtn.target.classList.remove('fa-eye-slash');
-        togglebtn.target.classList.add('fa-eye');
-        togglebtn.target.parentElement.querySelector('input').type = "password";
-    }
-}
+// forms = document.querySelectorAll('form');
+
 function switchinput(togglebtn){
     if (togglebtn.classList[1] == 'fa-eye'){
         togglebtn.classList.remove('fa-eye');
@@ -260,5 +272,31 @@ actionBtn.addEventListener("click", function(){
         actionBtn.classList.remove('fa-chevron-left');
         actionBtn.classList.add('fa-chevron-right');
     }
-    actionBtn.parentElement.parentElement.classList.toggle("menu");
+    actionBtn.parentElement.parentElement.parentElement.classList.toggle("menu");
 });
+
+let inactiveTimeout;
+const INACTIVE_TIME = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+// Function to reset the inactive timeout
+function resetInactiveTimeout() {
+    clearTimeout(inactiveTimeout);
+    inactiveTimeout = setTimeout(handleInactive, INACTIVE_TIME);
+}
+
+// Function to handle user inactivity
+function handleInactive() {
+    formsubmission('logoutform', 'logout.php', 'Logging out...');
+    console.log('User inactive for 5 minutes');
+}
+
+// Event listeners to track user activity
+function setupActivityTracking() {
+    document.addEventListener('mousemove', resetInactiveTimeout);
+    document.addEventListener('keypress', resetInactiveTimeout);
+    // Add more event listeners as needed to track other user interactions
+}
+
+// Initialize activity tracking when the page loads
+setupActivityTracking();
+resetInactiveTimeout(); // Start the timeout initially

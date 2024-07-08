@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:wght@100..900&family=Miltonian&family=Sevillana&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../logo.png">
+    <!-- <link rel="icon" href="../logo.png"> -->
+    <link rel="icon" href="https://biocharclimateresolution.org/f1.png">
     <meta name="theme-color" content="rgb(22, 110, 22)">
     <script src="https://kit.fontawesome.com/6aa0d943f8.js" crossorigin="anonymous"></script>
 </head>
@@ -29,7 +30,7 @@
             <div class="left">
                 <div class="name">
                     <div class="logo">
-                        <img src="../ff.png" alt="">
+                        <img src="../f1.png" alt="">
                     </div>
                     <div class="acronym">
                         BCR
@@ -89,7 +90,7 @@
                                         </div>
                                     </div>
                                     <p class="profile"><?php print_r($row['userprofile']);?></p>
-                                    <a href="tel:<?php print_r($row['whatsapp']);?>"><?php print_r($row['whatsapp']);?></a>
+                                    <!-- <a href="tel:<?php print_r($row['whatsapp']);?>"><?php print_r($row['whatsapp']);?></a> -->
                                     <br><br>
                                     <a href="mailto:<?php print_r($row['email']);?>"><?php print_r($row['email']);?></a>
                                     </li>

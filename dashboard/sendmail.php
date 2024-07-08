@@ -5,26 +5,30 @@
     $content = $_POST['content'];
     if($to_email == "" || $content == "" || $subject == ""){
         echo"Please enter all the required values";
-        // echo $_POST['from']." ".$_POST['receiver']." ".$_POST['content']." ".$_POST['subj'];
     }
     else{
-        // $to = $_POST['receiver'];
-        // $subject = $_POST['subj'];
-        // $message = $_POST['content'];
-        // $from = $_POST['from'];
-          
-        // Set headers
-        $headers = "From: $from_email\r\n";
-        $headers .= "Reply-To: $from_email\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset==UTF-8\r\n";
-        // "Content-Type" => "text/html;charset=UTF-8",
+        $to = "felixwhitesean@gmail.com";
+        $subject = "Welcome to the BCR website";
 
-        // Send email
-        if (mail($to_email, $subject, $content, $headers)) {
-            echo "1";
-        } else {
-            echo "Error: Unable to send email.";
-        }
+        $headers = array(
+            "MIME-Version" => "1.0",
+            "Content-Type" => "text/html;charset=UTF-8",
+            "From" => "info@biocharclimateresolution.org",
+            "Reply-To" => "info@biocharclimateresolution.org"
+        );
+
+        $message = file_get_contents("mail-template.html");
+
+        $send = mail($to, $subject, $message, $headers);
+
+        echo($send ? "Mail is send" : "There was an error" );
+        // if (mail($to_email, $subject, $content, $headers)) {
+        //     echo "1";
+        // } else {
+        //     echo "Error: Unable to send email.";
+        // }
     }
 ?>
+
+<?php
+    

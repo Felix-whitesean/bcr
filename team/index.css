@@ -120,6 +120,8 @@ body {
     width: 42px;
     height: 42px;
     border-radius: 50%;
+    background: white;
+    padding: 2%;
 }
 .navigation .name .acronym{
     text-transform: uppercase;

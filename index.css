@@ -55,8 +55,8 @@ body {
     margin: auto;
     border: 5px solid var(--primary-background);
     border-radius: 50%;
-    border-top: 5px solid var(--primary-background);
-    border-right: 5px solid var(--primary-background);
+    /* border-top: 5px solid red;
+    border-right: 5px solid red; */
     width: 80px;
     height: 80px;
     background-size: 50% 50%;
@@ -138,6 +138,8 @@ body {
     width: 42px;
     height: 42px;
     border-radius: 50%;
+    background: white;
+    padding: 2%;
 }
 .navigation .name .acronym{
     text-transform: uppercase;

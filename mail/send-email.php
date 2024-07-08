@@ -160,8 +160,6 @@
                 // This line removes all comments from the HTML
                 $dom->removeChild($dom->doctype);
                 
-                // You can use various DOM methods to access and modify elements here
-                // For example, to get the body content:
                 $body = $dom->getElementsByTagName('body')->item(0);
                 $renderedContent = $dom->saveHTML($body);
             ?>
