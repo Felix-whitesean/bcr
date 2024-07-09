@@ -1,7 +1,7 @@
 <?php
     session_start();
     $_SESSION['last_activity'] = time();
-    $name = $_SESSION['uname']
+    $name = $_SESSION['uname'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
