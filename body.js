@@ -163,7 +163,7 @@ window.addEventListener('load', function(){
     // first = document.querySelector('.first');
     for(i=0; i<navLinks.length; i++){
         if(cur == navLinks[i].href){
-            navLinks[i].style.border = "1px solid";
+            navLinks[i].style.border = "1px solid black";
             navLinks[i].style.color = "var(--green)";
             navLinks[i].style.boxShadow = "1px 1px 3px var(--green) inset, -1px -1px 3px var(--green) inset";
         }

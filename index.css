@@ -184,7 +184,7 @@ body {
     padding-left: 20px;
     padding: 5px 10px;
     box-shadow: 1px 1px 3px black inset, -1px -1px 3px black inset;
-    animation: 2s bubbleup;
+    animation: 1s bubbleup;
     animation-iteration-count: 1;
 }
 @keyframes bubbleup {
@@ -197,7 +197,7 @@ body {
     }
     100%{
         color: var(--green);
-        width: 100%;
+        width: 90%;
         align-self: left;
     }
 }
