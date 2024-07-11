@@ -340,7 +340,8 @@ body {
     font-family: "Font Awesome 5 Free";
     padding-left: 8px;
     border-top-left-radius: 30px;
-    animation-delay: 5s;
+    animation-delay: 6s;
+    animation-iteration-count: 2;
     margin-left: -8px;
     font-size: 17px;
     line-height: 20px;

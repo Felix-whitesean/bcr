@@ -8,8 +8,7 @@ function hideLoading(){
 popupwindow = document.querySelector(".popup");
 emailButtons = document.querySelector('.email').querySelector('.head').querySelectorAll('button');
 list = document.querySelector(".topics").querySelectorAll("li");
-for(i = 0; i < list.length; i++){
-    
+for(i = 0; i < list.length; i++){ 
     list[i].style.color = "var(--white)";
     const listName = document.createElement("span");
     listName.textContent = list[i].getAttribute('title');
@@ -24,7 +23,7 @@ for(i = 0; i < list.length; i++){
             for(i = 0; i<list.length; i++){
                 list[i].style.color = "var(--white)";
                 list[i].querySelector('i').style.color = "var(--white)";
-                list[i].querySelector('span').style.color = "var(--green)";
+                list[i].querySelector('span').style.color = "var(--white)";
                 list[i].style.paddingLeft= "5px";
                 list[i].querySelector('i').style.paddingLeft= "5px";
                 list[i].querySelector('span').style.paddingLeft= "5px";
@@ -51,10 +50,10 @@ for(i = 0; i < list.length; i++){
         event.target.style.paddingLeft= "12px";
         if(event.target.tagName.toLowerCase() == "i" || event.target.tagName.toLowerCase() == "span"){
             toDisplay = document.querySelector("."+event.target.parentElement.getAttribute('title').toLowerCase().split(" ").join("-")); 
-            event.target.parentElement.querySelector('i').style.color = "var(--brown)";
-            event.target.parentElement.querySelector('span').style.color = "var(--brown)";
+            event.target.parentElement.querySelector('i').style.color = "var(--green)";
+            event.target.parentElement.querySelector('span').style.color = "var(--green)";
             event.target.parentElement.style.paddingLeft= "12px";
-            event.target.parentElement.style.background= "rgb(255, 255, 255)";
+            event.target.parentElement.style.background= "rgb(240, 240, 240)";
             event.target.style.paddingLeft= "0";
         }
         else{
