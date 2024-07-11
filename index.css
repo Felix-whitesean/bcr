@@ -155,11 +155,18 @@ body {
 .navigation .topics a{
     color: black;
     text-decoration: none;
-    line-height: 46px;
+    line-height: auto;
     font-size: 19px;
     letter-spacing: 1.4px;
-    transition: 1s;
+    transition: 1s ease-in-out;
     display: flex;
+    background: rgb(240, 240, 240, .8);
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 7px;
+    padding: 5px 10px;
+    text-wrap: nowrap;
+    
 }
 .navigation .topics a:visited{
     color: black;
@@ -168,13 +175,31 @@ body {
     align-self: center;
 }
 .navigation .topics a:hover{
-    transition: 1s;
+    transition: 1s ease-in-out;
     border-top: 1px solid;
     border-bottom: 1px solid;
     box-sizing: border-box;
-    color: var(--white);
+    color: var(--green);
     justify-content: space-between;
     padding-left: 20px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 3px black inset, -1px -1px 3px black inset;
+    animation: 2s bubbleup;
+    animation-iteration-count: 1;
+}
+@keyframes bubbleup {
+    0%{
+        width: 50%;
+        color: transparent;
+    }
+    50%{
+        color: transparent;
+    }
+    100%{
+        color: var(--green);
+        width: 100%;
+        align-self: left;
+    }
 }
 .follow{
     overflow: hidden;
