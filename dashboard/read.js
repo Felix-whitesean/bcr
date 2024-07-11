@@ -10,7 +10,7 @@ emailButtons = document.querySelector('.email').querySelector('.head').querySele
 list = document.querySelector(".topics").querySelectorAll("li");
 for(i = 0; i < list.length; i++){
     
-    list[i].style.color = "var(--green)";
+    list[i].style.color = "var(--white)";
     const listName = document.createElement("span");
     listName.textContent = list[i].getAttribute('title');
     list[i].appendChild(listName);
@@ -22,8 +22,8 @@ for(i = 0; i < list.length; i++){
         arrowLeft.style.display = "initial";
         arrowLeft.addEventListener("click", function(){
             for(i = 0; i<list.length; i++){
-                list[i].style.color = "var(--green)";
-                list[i].querySelector('i').style.color = "var(--green)";
+                list[i].style.color = "var(--white)";
+                list[i].querySelector('i').style.color = "var(--white)";
                 list[i].querySelector('span').style.color = "var(--green)";
                 list[i].style.paddingLeft= "5px";
                 list[i].querySelector('i').style.paddingLeft= "5px";
@@ -37,9 +37,9 @@ for(i = 0; i < list.length; i++){
             }
         });
         for(i = 0; i<list.length; i++){
-            list[i].style.color = "var(--green)";
-            list[i].querySelector('i').style.color = "var(--green)";
-            list[i].querySelector('span').style.color = "var(--green)";
+            list[i].style.color = "var(--white)";
+            list[i].querySelector('i').style.color = "var(--white)";
+            list[i].querySelector('span').style.color = "var(--white)";
             list[i].style.paddingLeft= "5px";
             list[i].querySelector('i').style.paddingLeft= "5px";
             list[i].querySelector('span').style.paddingLeft= "5px";

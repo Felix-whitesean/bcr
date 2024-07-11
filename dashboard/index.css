@@ -264,7 +264,7 @@ body {
 }
 .navigation{
     flex: 0 0 228px;
-    background: var(--white);
+    background: var(--green);
     height: 99vh;
     box-shadow: 0 2px 8px 2px rgb(0, 0, 0);
     box-sizing: border-box;
@@ -303,7 +303,7 @@ body {
 }
 .navigation .name .acronym{
     font-weight: bold;
-    color: var(--green);
+    color: var(--white);
     font-size: 16px;
     margin: 0;
 }
@@ -313,7 +313,7 @@ body {
     flex-direction: column;
 }
 .navigation .topics li{
-    color: var(--green);
+    color: var(--white);
     text-decoration: none;
     line-height: 46px;
     font-size: 13px;
@@ -334,7 +334,7 @@ body {
     padding-left: 12px;
     /* border-bottom: 1px solid; */
     outline: 1px solid black;
-    background: rgb(255, 255, 255, .7);
+    background: var(--green-7);
     /* background: radial-gradient(farthest-side,rgb(227, 120, 30) 4%, rgb(0, 0, 0)); */
 }
 .navigation .topics li i{
@@ -458,7 +458,7 @@ body {
 }.landingprofilecontainer{
     background: rgb(217, 217, 217, .8);
     border-radius: 20px;
-    border: 2px solid var(--brown);
+    border: 1px solid var(--brown);
     padding: 20px;
     position: relative;
     margin: auto;
@@ -629,7 +629,7 @@ body {
     min-width: 350px;
     background: rgb(240, 240, 240);
     border-radius: 5px;
-    border: 2px solid var(--brown);
+    border: 1px solid var(--brown);
     align-self: center;
 }
 .actionwindow form button, .contactdeveloper form button{
