@@ -1007,7 +1007,12 @@ body {
         top: 20px;
         position: absolute;
         z-index: 1111;
-        border-radius: 5%;
+        /* width: 9%; */
+        border-radius: 50%;
+    }
+    .navigation .name .logo a img{
+        width: 24px;
+        height: 24px;
     }
     .navigation .name .acronym{
         display: none;
@@ -1019,7 +1024,7 @@ body {
         display: none;
     }
     .navigation .topics li i{
-        color: var(--green);
+        color: var(--white);
         text-decoration: none;
         line-height: 46px;
         font-size: 16px;
@@ -1034,7 +1039,7 @@ body {
         transition: 1s;
         flex: 0 0 228px;
         position: fixed;
-        background: var(--white);
+        background: var(--green);
         height: 99vh;
         box-shadow: 0 4px 8px 2px rgb(0, 0, 0);
         box-sizing: border-box;
@@ -1043,6 +1048,11 @@ body {
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    .menu .name{
+        margin-top: 20px;
+        margin-left: 30%;
+        transform: translateX(-30%);
+    }
     .navigation .topics li, .navigation .topics li{
         padding-left: 10px;
     }
@@ -1050,24 +1060,26 @@ body {
         /* position: absolute; */
         align-self: flex-end;
         width:fit-content;
-        margin-left: 5px;
-        z-index: 11;
+        margin-left: 100%;
+        transform: translateX(-90%);
+        z-index: 1111;
         display: flex;
-        /* top: 50%; */
         background: var(--green);
         padding: 10px 12px;
         color: var(--white);
-        left: 10px;
         border-radius: 50%;
+        /* border-top-left-radius: 5%;
+        border-bottom-left-radius: 5%; */
+        margin-top: 15%;
         user-select: none;
         border: 1px solid var(--white);
-        background: radial-gradient(circle, var(--brown-8) 20%, black);
+        background: radial-gradient(circle, transparent 20%, black);
         box-shadow: .1px .1px 2px var(--white) inset, -.1px -.1px 2px var(--white) inset;
-        outline: 2px solid var(--brown);
+        /* outline: 2px solid var(--brown); */
     }
     .navigation .actionbtn i:hover{
         cursor: pointer;
-        outline: 2px solid black;
+        outline: 1px solid black;
     }
     .right{
         overflow-y: auto;
@@ -1081,9 +1093,6 @@ body {
     .landing .floatingheader{
         margin-left: 10%;
         transform: translateX(-10%);
-    }
-    .landing .floatingheader h4{
-        display: none
     }
     .contactdeveloper{
         width: 95%;
