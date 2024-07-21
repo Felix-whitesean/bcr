@@ -29,7 +29,12 @@
 </head>
 <body>
 <div class="container1">
-    <div class="popup"></div>
+    <div class="popup">
+        <h5></h5>
+        <p></p>
+        <div class="progressbox"></div>
+    </div>
+
 </div>
     <?php
     if(!$name){
@@ -50,7 +55,7 @@
                         <input type="password" id="password" name="adPass" placeholder="Password" required>
                         <i onclick="switchinput(this)" class="fa-regular fa-eye"></i>
                     </fieldset>
-                    <button type="button" onclick="formsubmission('login','login.php', 'Sign in successful...')">Submit</button>
+                    <button type="button" onclick="formsubmission('login','login.php', 'Sign in successful...', 0)">Submit</button>
                 </div>
                 <br>
                 <a onclick="popup('Enter email', '3000')">Forgot password</a>

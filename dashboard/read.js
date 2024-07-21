@@ -98,7 +98,7 @@ function minimize(cancelbtn){
         cancelbtn.parentElement.style.display = "none";
     }, 100);
     
-    pop("process cancelled", 3000);
+    pop("process cancelled", 3000, 0);
 }
 // Get all radio buttons by name
 var radioButtons = document.querySelector(".email").querySelectorAll('input[type="radio"][name="email"]');
@@ -178,7 +178,7 @@ function formsubmission(formid, actionfile, successMessage){
                 }
             }
             if(characters==""){
-                pop("Please enter all the required details", 3000);
+                // pop("Please enter all the required details", 3000);
                 input.parentElement.style.borderColor = "red";
                 input.focus();
                 return;
@@ -195,7 +195,7 @@ function formsubmission(formid, actionfile, successMessage){
             if (xhr.status === 200) {
                 console.log(xhr.responseText);
                 if(xhr.responseText == 1){
-                    pop(successMessage, 3000);
+                    pop(successMessage, 3000, 0);
                     form.reset();
                     setTimeout(function() {
                         location.reload();
@@ -238,12 +238,48 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
     })
     .catch(error => console.error('Error:', error));
 });
-function pop(txt, timeout){
-    popupwindow.textContent = txt;
+function pop(txt, timeout, status){
+    popupwindow.querySelector('p').textContent = txt;
+    popupwindow.querySelector('.progressbox').style.setProperty('--timeout', timeout + 'ms');
+    let timeoutId;
+    function startTimeout(timeout) {
+        timeoutId = setTimeout(function() {
+            popupwindow.style.display = "none";
+        }, timeout);
+    }
+    popupwindow.addEventListener('mouseenter',  ()=>{
+        popupwindow.querySelector('.progressbox').style.setProperty('--playstate', 'paused');
+        pauseTimeout();
+    });
+    popupwindow.addEventListener('mouseleave',  ()=>{
+        popupwindow.querySelector('.progressbox').style.setProperty('--playstate', 'running');
+        resumeTimeout();
+    });
     popupwindow.style.display = "initial";
-    setTimeout(function () {
-        popupwindow.style.display = "none";
-    }, timeout);
+    function pauseTimeout() {
+        clearTimeout(timeoutId); // Clear the timeout
+        remainingTime = timeout - timeoutId; // Store remaining time (Node.js specific)
+        console.log("Timeout paused");
+    }
+    function resumeTimeout() {
+        if (remainingTime > 0) {
+            startTimeout(remainingTime); // Resume timeout with remaining time
+            remainingTime = 0; // Reset remaining time
+            console.log("Timeout resumed");
+        } else {
+            console.log("No timeout to resume");
+        }
+    }
+    startTimeout(timeout);
+    const statustitle = popupwindow.querySelector('h5');
+    if (status == "0"){
+        statustitle.textContent = "Success";
+        popupwindow.style.color = 'var(--green)';
+    }
+    else{
+        statustitle.textContent = "Error";
+        popupwindow.style.color = 'var(--brown)';
+    }
 }
 
 // forms = document.querySelectorAll('form');
