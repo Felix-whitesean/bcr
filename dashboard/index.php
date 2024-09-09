@@ -44,7 +44,7 @@
                 <div class="input-container">
                     <div class="title">
                         <img src="finalicon.png" alt="">
-                        <h3>Admin Login</h3>
+                        <h3>Account Login</h3>
                     </div>
                     <fieldset>
                         <label for="adName"><i class="fa-regular fa-user"></i></label>

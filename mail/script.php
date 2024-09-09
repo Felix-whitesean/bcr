@@ -14,3 +14,4 @@
 
     $send = mail($to, $subject, $message, $headers);
     echo($send ? "Mail is send" : "There was an error" );
+?>
